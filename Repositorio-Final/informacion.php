@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SE work</title>
+    <title>Trending News</title>
+    <link rel="stylesheet" href="css/carrousel.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
- 
+    
 </head>
 <body>
-    <header class="bg-light py-3">
+<header class="bg-light py-3" id="header-carrousel">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4">
                     <img src="img/LOGOAMBIENTEWEB.png" alt="Logo" id="logo" class="img-fluid">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8" id="navbar_main">
                     <nav>
-                        <ul class="nav justify-content-end" >
+                        <ul class="nav justify-content-end " id="navbar_main" >
                             <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="informacion.php">Información</a></li>
                             <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
@@ -28,36 +28,76 @@
             </div>
         </div>
     </header>
-    <main class="container mt-4">
-        <section id="informacion" class="mb-4">
-            <h1 class="display-4">Aquí se muestran imágenes de Bruno Mars</h1>
-            <p class="lead">Se muestran imágenes de Bruno en diferentes escenarios.</p>
-        </section>
-        <section id="services" class="mb-4">
-            <h2><?php echo "Servicios"; ?></h2>
-            <p><?php $servicesText = "En esta página se muestra información de Bruno Mars así como imágenes de él."; echo $servicesText; ?></p>
-        </section>
-        
-        <div id="image1" class="mb-4">
-        <?php
-            $images = array("bruno1.jpeg", "2.jpg", "3.jpg");
+    <div class="slider-box">
+        <ul>
+        <li>
+            <img src="img/s2.jpg" alt="">
+            <div class="texto">
+                <h2>Noticia 1</h2>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur error voluptatibus voluptatum provident dicta soluta quidem nostrum ex! Perspiciatis voluptas aliquam quia! Commodi repellat quis aliquam nobis quam enim doloremque.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi quod provident quia error accusamus corporis in officia? Quaerat fugiat officiis non, nulla sequi omnis dignissimos odio neque voluptates porro placeat!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reiciendis iure repudiandae? Nam voluptatem laudantium modi sunt sint dolorum reiciendis unde numquam dignissimos. Magni quia eveniet accusamus suscipit et necessitatibus!
+                </p>
 
-            foreach ($images as $image) {
-                echo '<img src="img/' . $image . '" alt="Imagen de Bruno Mars" class="img-fluid">';
-            }
-        ?>
-        </div>
 
-        <button id="changeColorButton" class="btn btn-primary mb-4">Cambiar Color de Fondo</button>
+            </div>
+            <img src="" alt="">
+        </li>
+        <li>
+            <img src="img/s1.jpg" alt="">
+            <div class="texto">
+                <h2>Noticia 2</h2>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur error voluptatibus voluptatum provident dicta soluta quidem nostrum ex! Perspiciatis voluptas aliquam quia! Commodi repellat quis aliquam nobis quam enim doloremque.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi quod provident quia error accusamus corporis in officia? Quaerat fugiat officiis non, nulla sequi omnis dignissimos odio neque voluptates porro placeat!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reiciendis iure repudiandae? Nam voluptatem laudantium modi sunt sint dolorum reiciendis unde numquam dignissimos. Magni quia eveniet accusamus suscipit et necessitatibus!
+                </p>
 
-    </main>
-    <footer class="bg-light py-3 mt-4">
-        <div class="container">
-            <p class="text-center mb-0">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
-        </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+            </div>
+            <img src="" alt="">
+        </li>
+        <li>
+            <img src="img/s1.jpg" alt="">
+            <div class="texto">
+                <h2>Noticia 3</h2>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur error voluptatibus voluptatum provident dicta soluta quidem nostrum ex! Perspiciatis voluptas aliquam quia! Commodi repellat quis aliquam nobis quam enim doloremque.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi quod provident quia error accusamus corporis in officia? Quaerat fugiat officiis non, nulla sequi omnis dignissimos odio neque voluptates porro placeat!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reiciendis iure repudiandae? Nam voluptatem laudantium modi sunt sint dolorum reiciendis unde numquam dignissimos. Magni quia eveniet accusamus suscipit et necessitatibus!
+                </p>
+
+
+            </div>
+            <img src="" alt="">
+        </li>
+        <li>
+            <img src="img/s2.jpg" alt="">
+            <div class="texto">
+                <h2>Noticia 4</h2>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur error voluptatibus voluptatum provident dicta soluta quidem nostrum ex! Perspiciatis voluptas aliquam quia! Commodi repellat quis aliquam nobis quam enim doloremque.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi quod provident quia error accusamus corporis in officia? Quaerat fugiat officiis non, nulla sequi omnis dignissimos odio neque voluptates porro placeat!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati reiciendis iure repudiandae? Nam voluptatem laudantium modi sunt sint dolorum reiciendis unde numquam dignissimos. Magni quia eveniet accusamus suscipit et necessitatibus!
+                </p>
+
+
+            </div>
+            <img src="" alt="">
+        </li>
+
+        </ul>
+
+
+    </div>
+
+
+
+
+
+
+
+
 </body>
 </html>

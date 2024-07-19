@@ -89,8 +89,61 @@ body{
     font-size: 15px;
    }
     
-.header-carrousel{
-    
+/* Estilo base de la barra de navegación */
+#navbar_main {
+    background-color: #ffffff ; 
+    justify-content: center;/* Color          de fondo de la barra de navegación */
+    padding: 6px; /* Espaciado interior */
+}
+
+/* Estilo de los ítems de la lista */
+#navbar_main ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    margin: 0;
+    padding: 0;
+}
+
+#navbar_main li {
+    display: inline; 
+    margin-right: 10px; /* Espacio entre elementos */
+}
+
+#navbar_main li a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: black; 
+    padding: 5px 10px; 
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; 
+}
+
+
+#navbar_main li a:hover {
+    background-color: darkkhaki; 
+    color: beige; 
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
 }
 
 
