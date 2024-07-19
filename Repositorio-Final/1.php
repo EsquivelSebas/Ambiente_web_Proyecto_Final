@@ -35,7 +35,7 @@
         </section>
         <section id="services" class="mb-4">
             <h2><?php echo "Servicios"; ?></h2>
-            <p><?php $servicesText = "En esta página se muestra información de Bruno Mars así como imágenes de él."; echo $servicesText; ?></p>
+            <p><?php $servicesText = "En esta pagina se muestra información de Bruno Mars así como imágenes de él."; echo $servicesText; ?></p>
         </section>
         
         <div id="image1" class="mb-4">
