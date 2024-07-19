@@ -17,10 +17,11 @@
                 </div>
                 <div class="col-md-8">
                     <nav>
-                        <ul class="nav justify-content-end">
+                        <ul class="nav justify-content-end" >
                             <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="informacion.php">Información</a></li>
                             <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -52,7 +53,7 @@
     </main>
     <footer class="bg-light py-3 mt-4">
         <div class="container">
-            <p class="text-center mb-0">&copy; <?php echo date("d/m/Y"); ?> Página Nicole Obregón.</p>
+            <p class="text-center mb-0">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>
     </footer>
 

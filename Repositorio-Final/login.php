@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<h2>What news are trending?</h2>
     <header class="bg-light py-3" style="color:aqua">
         <div class="container">
             <div class="row align-items-center">

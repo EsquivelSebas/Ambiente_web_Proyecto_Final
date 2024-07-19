@@ -1,13 +1,48 @@
-header {
-    background-color: #ffffff;
-    color: #fff;
-    padding: 1em 0;
-    text-align: center;
-}
+
 
 img#logo {
     max-width: 80px;
     margin-top: 10px;
+}
+
+.headermain{
+    padding-left: 45px;
+    background-color: aqua
+}
+
+
+
+
+/* Estilo base de la barra de navegación */
+#navbar_main {
+    background-color: #ffffff ; /* Color de fondo de la barra de navegación */
+    padding: 6px; /* Espaciado interior */
+}
+
+/* Estilo de los ítems de la lista */
+#navbar_main ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    margin: 0;
+    padding: 0;
+}
+
+#navbar_main li {
+    display: inline; 
+    margin-right: 10px; /* Espacio entre elementos */
+}
+
+#navbar_main li a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: black; 
+    padding: 5px 10px; 
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; 
+}
+
+
+#navbar_main li a:hover {
+    background-color: darkkhaki; 
+    color: beige; 
 }
 
 nav ul {
@@ -31,7 +66,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #fff;
+    background-color: #555;
 }
 
 form {
@@ -86,7 +121,7 @@ form button:hover {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: aqua;
 }
 
@@ -114,3 +149,5 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+

@@ -15,7 +15,7 @@
                     <img src="img/LOGOAMBIENTEWEB.png" alt="Logo" id="logo" class="img-fluid">
                 </div>
                 <div class="col-md-8">
-                    <nav>
+                    <nav id="navbar_main">
                         <ul class="nav justify-content-end">
                             <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="informacion.php">Información</a></li>
@@ -48,7 +48,7 @@
     </main>
     <footer class="bg-light py-3 mt-4">
         <div class="container">
-            <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> Página Nicole Obregón.</p>
+            <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>
     </footer>
 
