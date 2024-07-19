@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const emailInput = document.getElementById('email');
     const messageInput = document.getElementById('message');
 
-   
+    // Event listener para validar el formulario cuando se introduce texto
     contactForm.addEventListener('input', function() {
         validateForm();
     });
@@ -20,19 +20,16 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.querySelector('button[type="submit"]').disabled = true;
         }
     }
-
-   
 });
 
+// Aquí comienza un nuevo evento DOMContentLoaded, no debe estar anidado dentro del anterior
 document.addEventListener('DOMContentLoaded', function() {
-    
     const changeColorButton = document.getElementById('changeColorButton');
     changeColorButton.addEventListener('click', function() {
         const randomColor = getRandomColor();
         document.body.style.backgroundColor = randomColor;
     });
 
-    
     function getRandomColor() {
         const letters = '0123456789ABCDEF';
         let color = '#';
