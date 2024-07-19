@@ -11,7 +11,9 @@ img#logo {
     background-color: aqua;
 }
 
-
+.btn-primary {
+    background-color: darkkhaki !important;
+    }
 
 
 /* Estilo base de la barra de navegación */

@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h2>What news are trending?</h2>
     <header class="bg-light py-3" style="color:aqua">
         <div class="container">
             <div class="row align-items-center">
@@ -20,7 +19,7 @@
                 <div class="col-md-8">
                     <nav>
                         <ul class="nav justify-content-end">
-                            <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -29,17 +28,17 @@
     </header>
     <main class="container mt-4">
         <section id="contact" class="mb-4">
-            <h2 class="mb-3" style="color:burlywood">Login</h2>
+            <h2 class="mb-3" style="color:black">Login</h2>
             <form method="post" action="index.php">
                 <div class="mb-3">
-                    <label for="nombreUsuario" class="form-label">Usuario:</label>
+                    <label for="nombreUsuario" class="form-label">User:</label>
                     <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" required>
                 </div>
                 <div class="mb-3">
-                    <label for="contraseña" class="form-label">Contraseña:</label>
+                    <label for="contraseña" class="form-label">password:</label>
                     <input type="password" class="form-control" id="contraseña" name="contraseña" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonEnviar">Iniciar sesión</button>
+                <button type="submit" class="btn btn-primary" id="botonEnviar">Login</button>
                 <br>
                 <p id="mensajeInicioSesion"></p>
             </form>

@@ -6,6 +6,13 @@
     font-family: Arial, Helvetica, sans-serif;
 
 }
+.hola h2{
+    justify-content: center;
+    text-align: center;
+
+}
+
+
 
 body{
     background-color: #ffffff;
@@ -55,6 +62,10 @@ body{
     width: 100%;
 }
 
+.trending{
+    text-align: center;
+}
+
 
 @keyframes slide {
 0% {margin-left: 0%;}
@@ -90,34 +101,34 @@ body{
    }
     
 /* Estilo base de la barra de navegación */
-#navbar_main {
-    background-color: #ffffff ; 
-    justify-content: center;/* Color          de fondo de la barra de navegación */
-    padding: 6px; /* Espaciado interior */
+.navbar_main1 {
+    background-color: #ffffff !important ; 
+    justify-content: center !important;/* Color de fondo de la barra de navegación */
+    padding: 6px !important; /* Espaciado interior */
 }
 
 /* Estilo de los ítems de la lista */
-#navbar_main ul {
+.navbar_main1 ul {
     list-style-type: none; /* Quita los puntos de la lista */
     margin: 0;
     padding: 0;
 }
 
-#navbar_main li {
+.navbar_main1 li {
     display: inline; 
     margin-right: 10px; /* Espacio entre elementos */
 }
 
-#navbar_main li a {
+.navbar_main1 li a {
     text-decoration: none; /* Quita el subrayado de los enlaces */
     color: black; 
-    padding: 5px 10px; 
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s; 
+    padding: 5px 10px !important; 
+    border-radius: 5px !important; /* Bordes redondeados */
+    transition: background-color 0.3s !important; 
 }
 
 
-#navbar_main li a:hover {
+.navbar_main1 li a:hover {
     background-color: darkkhaki; 
     color: beige; 
 }

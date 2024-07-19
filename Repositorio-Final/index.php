@@ -40,7 +40,7 @@
                 <img src="img/LOGOAMBIENTEWEB.png" id="cardImage" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title"> Job Offer </h5>
-                    <p class="card-text">Clickea aqui para ir al portal.</p>
+                    <p class="card-text">Click here to open the portal.</p>
                     <a href="#" class="btn btn-primary">portal</a>
                 </div>
                 </section>

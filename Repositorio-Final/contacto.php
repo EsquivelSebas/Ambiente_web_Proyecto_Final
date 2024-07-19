@@ -17,9 +17,9 @@
                 <div class="col-md-8">
                     <nav id="navbar_main">
                         <ul class="nav justify-content-end">
-                            <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
-                            <li class="nav-item"><a class="nav-link" href="informacion.php">Información</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="informacion.php">Info</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contacto.php">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
