@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4">
-                    <img src="img/bruno.jpg" alt="Logo" id="logo" class="img-fluid">
+                    <img src="img/LOGOAMBIENTEWEB.png" alt="Logo" id="logo" class="img-fluid">
                 </div>
                 <div class="col-md-8">
                     <nav>

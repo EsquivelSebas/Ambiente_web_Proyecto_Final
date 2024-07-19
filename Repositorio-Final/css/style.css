@@ -1,48 +1,45 @@
-
 header {
-    background-color: #333;
+    background-color: #ffffff;
     color: #fff;
     padding: 1em 0;
     text-align: center;
 }
 
-header img#logo {
+img#logo {
     max-width: 80px;
-    margin-top: 10px; 
-    size: 1500px;
+    margin-top: 10px;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 nav ul li {
-    display: inline-block; 
+    display: inline-block;
     margin: 0 15px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px; 
+    font-size: 18px;
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #555;
+    background-color: #fff;
 }
-
 
 form {
     display: flex;
     flex-direction: column;
-    max-width: 400px; 
-    margin: 0 auto; 
-    background-color: #f9f9f9;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: black;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -50,10 +47,13 @@ form {
 
 form label {
     margin-top: 1em;
-    font-weight: bold; 
+    font-weight: bold;
+    color: #fff;
+    /* Para que el texto de los labels sea visible sobre el fondo negro */
 }
 
-form input, form textarea {
+form input,
+form textarea {
     margin-top: 0.5em;
     padding: 0.5em;
     font-size: 1em;
@@ -73,24 +73,32 @@ form button {
     transition: background-color 0.3s ease;
 }
 
+ .card img#cardImage {
+ 
+    max-width: 50px;
+
+
+}
+
+
 form button:hover {
     background-color: #555;
 }
 
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    color: #333; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: aqua;
 }
 
-h1, h2, h3 {
-    color: #555; 
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 25px;
 }
-
 
 main {
     padding: 2em;
-    text-align: justify; 
+    text-align: justify;
 }
 
 section {
@@ -98,7 +106,7 @@ section {
 }
 
 footer {
-    background-color: #333;
+    background-color: #ffffff;
     color: #fff;
     text-align: center;
     padding: 1em;

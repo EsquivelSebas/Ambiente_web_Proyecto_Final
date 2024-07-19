@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="bg-light py-3">
+    <header class="bg-light py-3" style="color:aqua">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4">
-                    <img src="img/bruno.jpg" alt="Logo" id="logo" class="img-fluid">
+                    <img src="img/LOGOAMBIENTEWEB.png" alt="Logo" id="logo" class="img-fluid">
                 </div>
                 <div class="col-md-8">
                     <nav>
@@ -28,7 +28,7 @@
     </header>
     <main class="container mt-4">
         <section id="contact" class="mb-4">
-            <h2 class="mb-3">Formulario</h2>
+            <h2 class="mb-3" style="color:burlywood">Login</h2>
             <form method="post" action="index.php">
                 <div class="mb-3">
                     <label for="nombreUsuario" class="form-label">Usuario:</label>
@@ -45,7 +45,7 @@
         </section>
     </main>
     <footer class="bg-light py-3 mt-4">
-        
+        <!-- Contenido del pie de página -->
     </footer>
 </body>
 </html>
