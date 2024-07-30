@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,7 +15,6 @@
 </head>
 
 <body>
-
     <header class="bg-light py-3" id="headermain">
         <div class="container">
             <div class="row align-items-center">
@@ -21,12 +24,24 @@
                 <div class="col-md-8">
                     <nav>
                         <ul class="nav justify-content-end" id="navbar_main1">
-                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="informacion.php">Info</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contacto.php">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                            <?php
+                            if(isset($_SESSION["nombre_usuario"]) && $_SESSION["nombre_usuario"] != "") {
+                                if($_SESSION["nombre_rol"] == "Cliente"){
+                                    echo '<li class="nav-item"><a class="nav-link" href="informacion.php">Crear oferta</a></li>';
+                                }else if($_SESSION["nombre_rol"] == "Contratador"){
+                                    echo '<li class="nav-item"><a class="nav-link" href="contacto.php">Información</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="crearOferta.php">Crear oferta</a></li>';
+                                }
+                            ?>
+                            <li class="nav-item"><a class="nav-link" href="login.php">Cerrar sesión</a></li>
+                            <?php
+                            }else{?>
+                            <li class="nav-item"><a class="nav-link" href="login.php">Iniciar sesión</a></li>
+                            <?php
+                            }
+                            ?>
                         </ul>
-                    </nav>
+                </nav>
                 </div>
             </div>
         </div>
