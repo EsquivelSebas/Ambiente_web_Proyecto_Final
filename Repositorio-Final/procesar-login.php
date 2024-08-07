@@ -25,6 +25,8 @@ while($fila = $resultado->fetch_assoc()){
             session_start();
             //Guardamos en una variable de sesión el nombre de usuario que está iniciando sesión.
             $_SESSION["nombre_usuario"] = $usuario;
+            //Guardamos en una variable el id del perfil que está iniciando sesión.
+            $_SESSION["id_perfil"]= $fila["Id_Perfil"];
             //Realizamos de nuevo el proceso de crear, vincular parámetros, ejecutar y obtener el resultado de una consulta.
             $declaracion_rol = $conexion->prepare("SELECT Nombre_Rol FROM `rol` AS A,`perfil` AS B WHERE A.Id_Rol = B.Id_Rol AND B.Nombre_Usuario = ?");
             $declaracion_rol->bind_param("s", $usuario);
@@ -36,7 +38,7 @@ while($fila = $resultado->fetch_assoc()){
                 header("Location: index.php");
             }
         }else{
-            echo "¡Contraseña incorrecta! <br>";
+            header("Location: iniciar_sesion.php");
             die();
         }
 
@@ -44,7 +46,7 @@ while($fila = $resultado->fetch_assoc()){
 }
 
 }else{
-    echo "¡No existe el usuario en la base de datos! <br>";
+    header("Location: iniciar_sesion.php");
     die();
 }
 

@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SE work</title>
+    <title>Inicio</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -27,16 +27,18 @@ session_start();
                             <?php
                             if(isset($_SESSION["nombre_usuario"]) && $_SESSION["nombre_usuario"] != "") {
                                 if($_SESSION["nombre_rol"] == "Cliente"){
-                                    echo '<li class="nav-item"><a class="nav-link" href="informacion.php">Crear oferta</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="buzon_cliente.php">Buzon personal</a></li>';
                                 }else if($_SESSION["nombre_rol"] == "Contratador"){
-                                    echo '<li class="nav-item"><a class="nav-link" href="contacto.php">Información</a></li>';
-                                    echo '<li class="nav-item"><a class="nav-link" href="crearOferta.php">Crear oferta</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="crear_oferta.php">Crear oferta</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="eliminar_oferta.php">Eliminar oferta</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="crear_mensaje.php">Enviar mensaje</a></li>';
                                 }
                             ?>
-                            <li class="nav-item"><a class="nav-link" href="login.php">Cerrar sesión</a></li>
+                            <li class="nav-item"><a class="nav-link" href="ofertas.php">Ofertas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar sesión</a></li>
                             <?php
                             }else{?>
-                            <li class="nav-item"><a class="nav-link" href="login.php">Iniciar sesión</a></li>
+                            <li class="nav-item"><a class="nav-link" href="iniciar_sesion.php">Iniciar sesión</a></li>
                             <?php
                             }
                             ?>
@@ -74,9 +76,5 @@ session_start();
             <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
 </body>
-
 </html>

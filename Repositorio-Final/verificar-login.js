@@ -10,19 +10,18 @@ function validarCampos(inputValue){
 
 document.addEventListener("DOMContentLoaded", function () {
     var botonEnviar = document.getElementById("botonEnviar");
-    var mensajeInicioSesion = document.getElementById("mensajeInicioSesion");
-    
-    botonEnviar.addEventListener("click", function (event){
+    if(botonEnviar){
+        botonEnviar.addEventListener("click", function (event){
+            var usuario = document.getElementById("usuario").value;
+            var contraseña = document.getElementById("contraseña").value;
+            if(!validarCampos(usuario) || !validarCampos(contraseña)){
+                event.preventDefault();
+                alert('Los campos no cumplen con el formato válido o están vacíos.');
+            }
         
-        var usuario = document.getElementById("usuario").value;
-        var contraseña = document.getElementById("contraseña").value;
-        
-        if(validarCampos(usuario) && validarCampos(contraseña)){
-            mensajeInicioSesion.textContent = "Inicio de sesión en progreso.";
-        }else{
-            event.preventDefault();
-            mensajeInicioSesion.textContent = "Inicio de sesión rechazado.";
-        }
-    });    
+        });
+    }else{
+        console.log('El elemento con id "botonEnviar" no se encontró en el DOM.');
+    }
 
 });

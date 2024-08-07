@@ -1,9 +1,14 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Aplicación</title>
+    <script src="./verificar-oferta.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -17,7 +22,7 @@
                 <div class="col-md-8">
                     <nav id="navbar_main">
                         <ul class="nav justify-content-end">
-                            <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -26,8 +31,8 @@
     </header>
     <main class="container mt-4">
         <section id="contact" class="mb-4">
-            <h2 class="mb-3">Ofertas</h2>
-            <form method="post" action="procesar-Oferta.php">
+            <h2 class="mb-3">Crear oferta</h2>
+            <form method="post" action="procesar-oferta.php">
                 <div class="mb-3">
                     <label for="nombreOferta" class="form-label">Nombre oferta:</label>
                     <input type="text" class="form-control" id="nombreOferta" name="nombreOferta" required>
@@ -41,11 +46,14 @@
                     <input type="date" class="form-control" id="fechaOferta" name="fechaOferta" required>
                 </div>
                 <div class="mb-3">
+                    <label for="idPerfil" class="form-label">Id perfil:</label>
+                    <input type="number" class="form-control" id="idPerfil" name="idPerfil" value="<?php echo $_SESSION['id_perfil']; ?>" required>
+                </div>
+                <div class="mb-3">
                     <label for="idEmpresa" class="form-label">Id empresa:</label>
                     <input type="number" class="form-control" id="idEmpresa" name="idEmpresa" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonCrear">Crear oferta</button>
-                <button type="submit" class="btn btn-primary" id="botonEliminar">Eliminar oferta</button>
+                <button type="submit" class="btn btn-primary" id="botonCrear" name="botonCrear">Crear oferta</button>
             </form>
         </section>
     </main>

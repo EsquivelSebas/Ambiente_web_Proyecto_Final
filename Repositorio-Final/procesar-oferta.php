@@ -1,25 +1,86 @@
 <?php
-
+session_start();
 include("bd-conexion.php");
 
-$nombre =  $_POST["nombreOferta"];
-$descripcion = $_POST["descripcionOferta"];
-$fecha =  $_POST["fechaOferta"];
-$id = $_POST["idEmpresa"];
+//Verificamos si la variable dentro del array post existe y que su valor no sea null de lo contrario le asignamos null.
+$nombre = isset($_POST["nombreOferta"]) ? $_POST["nombreOferta"] : null;
+$descripcion = isset($_POST["descripcionOferta"]) ? $_POST["descripcionOferta"] : null;
+$fecha = isset($_POST["fechaOferta"]) ? $_POST["fechaOferta"] : null;
+$idOferta = isset($_POST["idOferta"]) ? $_POST["idOferta"] : null;
+$idPerfil = isset($_SESSION["id_perfil"]) ? $_SESSION["id_perfil"] : null;
+$idEmpresa = isset($_POST["idEmpresa"]) ? $_POST["idEmpresa"] : null;
 
-//Creamos y preparamos la declaración para agregar la oferta a la base de datos.
-$declaracion = $conexion->prepare("INSERT INTO `oferta_empleo` (Nombre_Oferta, Descripcion_Oferta, Fecha_Oferta, Id_Empresa) VALUES (?,?,?,?)");
 
-//Vinculamos los parámetros con la declaración SQL.
-$declaracion->bind_param("ssss", $nombre, $descripcion, $fecha, $id);
-
-//Ejecutamos la declaración.
-if($declaracion->execute()){
-    echo "Información agregada correctamente! <br>";
-}else{
-    echo "Error al agregar la información:" .$declaracion->error . "<br>";
+try{
+    if(isset($_POST["botonCrear"])){
+        agregarOferta($nombre, $descripcion, $fecha, $idPerfil, $idEmpresa);
+        header("Location: crear_oferta.php");
+    }else if(isset($_POST["botonEliminar"])){
+        eliminarOferta($idOferta, $idPerfil, $idEmpresa);
+        header("Location: eliminar_oferta.php");
+    }else{
+        throw new Exception("Error al procesar la operación.");
+    }
+}catch(Exception $error){
+    echo $error->getMessage();
 }
 
-//Cerramos la declaración y la conexión.
-$declaracion->close();
-$conexion->close();
+try{
+    global $conexion;
+    //Preparamos la consulta para obtener la información que haya en la tabla oferta_empleo.
+    $consulta = $conexion->prepare("SELECT oferta_empleo.*, empresa.Nombre_Empresa FROM oferta_empleo, empresa WHERE oferta_empleo.Id_Empresa = empresa.Id_Empresa");
+    //Si la ejecución de la consulta fue fallida lanzamos una excepción.
+    if(!$consulta->execute()){
+        throw new Exception("Error al ejecutar la consulta: " .$consulta->error);
+    }else{
+        //Obtenemos el resultado de la consulta y lo guardamos en una variable.
+        $resultado = $consulta->get_result();
+        //Y para concluir recuperamos y guardamos en una variable de sesión todas las filas de la tabla como un array asociativo.
+        $_SESSION["ofertas"] = $resultado->fetch_all(MYSQLI_ASSOC);
+        $consulta->close();
+    }   
+}catch(Exception $error){
+    echo $error->getMessage();
+}finally{
+    $conexion->close();
+}
+
+
+
+//Limpiamos las variables después de usarlas.
+$_POST = array();
+
+function agregarOferta($nombre, $descripcion, $fecha, $idPerfil, $idEmpresa) {
+    global $conexion;
+    //Creamos la declaración preparada.
+    $declaracion = $conexion->prepare("INSERT INTO `oferta_empleo` (Nombre_Oferta, Descripcion_Oferta, Fecha_Oferta, Id_Perfil, Id_Empresa) VALUES (?,?,?,?,?)");
+    //Vinculamos los parámetros a la declaración.
+    $declaracion->bind_param("sssii", $nombre, $descripcion, $fecha, $idPerfil, $idEmpresa);
+    //Si al ejecutar la declaración nos da error lanzamos una excepción.
+    if(!$declaracion->execute()){
+        throw new Exception("Error al agregar la información: " .$declaracion->error);
+    }
+    //Y para concluir cerramos la conexión de la declaración con la base de datos.
+    $declaracion->close();
+}
+
+function eliminarOferta($idOferta, $idPerfil, $idEmpresa) {
+    global $conexion;
+    $declaracion = $conexion->prepare("DELETE FROM `oferta_empleo` WHERE Id_Oferta = ? AND Id_Perfil = ? AND Id_Empresa = ?");
+    $declaracion->bind_param("iii", $idOferta, $idPerfil, $idEmpresa);
+    if(!$declaracion->execute()){
+        throw new Exception("Error al eliminar la información: " .$declaracion->error);
+    }
+    $declaracion->close();
+}
+?>
+
+
+
+
+
+
+
+
+
+

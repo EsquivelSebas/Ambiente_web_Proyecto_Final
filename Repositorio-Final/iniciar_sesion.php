@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <script src="inicioSesion.js"></script>
+    <title>Aplicación</title>
+    <script src="./verificar-login.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -37,9 +37,8 @@
                     <label for="contraseña" class="form-label">Contraseña:</label>
                     <input type="password" class="form-control" id="contraseña" name="contraseña" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonEnviar">Iniciar sesión</button>
+                <button type="submit" class="btn btn-primary" id="botonEnviar" name="botonEnviar">Iniciar sesión</button>
                 <br>
-                <p id="mensajeInicioSesion"></p>
             </form>
         </section>
     </main>
