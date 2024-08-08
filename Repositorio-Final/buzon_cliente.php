@@ -30,11 +30,6 @@ $mensajes = $_SESSION["mensajes"] ?? array();
         </div>
     </header>
     <main class="container mt-4">
-        <section>
-            <form method="post" action="procesar-mensaje.php">
-                <button type="submit" class="btn btn-primary" name="botonVerMensajes">Ver Mensajes</button>
-            </form>
-        </section>
         <section id="contact" class="mb-4">
             <?php foreach ($mensajes as $mensaje): ?>
                 <div>

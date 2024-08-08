@@ -26,14 +26,14 @@ session_start();
                             <?php
                             if (isset($_SESSION["nombre_usuario"]) && $_SESSION["nombre_usuario"] != "") {
                                 if ($_SESSION["nombre_rol"] == "Cliente") {
-                                    echo '<li class="nav-item"><a class="nav-link" href="buzon_cliente.php">Buzon personal</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="select-mensaje.php">Buzon personal</a></li>';
                                 } else if ($_SESSION["nombre_rol"] == "Contratador") {
                                     echo '<li class="nav-item"><a class="nav-link" href="crear_oferta.php">Crear oferta</a></li>';
                                     echo '<li class="nav-item"><a class="nav-link" href="eliminar_oferta.php">Eliminar oferta</a></li>';
-                                    echo '<li class="nav-item"><a class="nav-link" href="crear_mensaje.php">Enviar mensaje</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="crear_mensaje.php">Crear mensaje</a></li>';
                                 }
                             ?>
-                                <li class="nav-item"><a class="nav-link" href="ofertas.php">Ofertas</a></li>
+                                <li class="nav-item"><a class="nav-link" href="select-oferta.php">Ofertas</a></li>
                                 <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar sesión</a></li>
                                 <?php
                             } else { ?>
