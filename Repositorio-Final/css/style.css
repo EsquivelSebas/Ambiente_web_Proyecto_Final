@@ -1,152 +1,174 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
 
-
+/* Logo */
 img#logo {
     max-width: 80px;
     margin-top: 10px;
 }
 
-.headermain{
-    padding-left: 45px;
-    font-size: 50px;
-    background-color: aqua;
+/* Barra de navegación principal */
+#navbar_main {
+    background-color: #ffffff;
+    justify-content: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary {
-    background-color: darkkhaki !important;
+    /* Estilos de los ítems de la lista */
+    #navbar_main ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 15px;
     }
 
+    #navbar_main li {
+        position: relative;
+    }
 
-/* Estilo base de la barra de navegación */
-#navbar_main {
-    background-color: #ffffff ; 
-    justify-content: center;/* Color de fondo de la barra de navegación */
-    padding: 6px; /* Espaciado interior */
-}
+        #navbar_main li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-/* Estilo de los ítems de la lista */
-#navbar_main ul {
-    list-style-type: none; /* Quita los puntos de la lista */
-    margin: 0;
+            #navbar_main li a:hover {
+                background-color: darkkhaki;
+                color: #fff;
+            }
+
+/* Estilo de botón de menú hamburguesa */
+.navbar-toggler {
+    border: none;
+    background: transparent;
     padding: 0;
 }
 
-#navbar_main li {
-    display: inline; 
-    margin-right: 10px; /* Espacio entre elementos */
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"%3E%3Cpath stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /%3E%3C/svg%3E');
 }
 
-#navbar_main li a {
-    text-decoration: none; /* Quita el subrayado de los enlaces */
-    color: black; 
-    padding: 5px 10px; 
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s; 
+/* Estilo del menú desplegable */
+.navbar-collapse {
+    flex-grow: 0;
 }
 
-
-#navbar_main li a:hover {
-    background-color: darkkhaki; 
-    color: beige; 
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-}
+    .navbar-nav a {
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
+        .navbar-nav a:hover {
+            background-color: darkkhaki;
+            color: #fff;
+        }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 10px 15px;
+/* Estilo de botones */
+.btn-primary {
+    background-color: darkkhaki !important;
+    border: none;
     border-radius: 5px;
-    transition: background-color 0.2s ease;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
 }
 
-nav ul li a:hover {
-    background-color: #555;
-}
+    .btn-primary:hover {
+        background-color: #a89e5f;
+    }
 
+/* Estilo del formulario */
 form {
     display: flex;
     flex-direction: column;
     max-width: 400px;
     margin: 0 auto;
-    background-color: black;
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-form label {
-    margin-top: 1em;
-    font-weight: bold;
-    color: #fff;
-    /* Para que el texto de los labels sea visible sobre el fondo negro */
+    form label {
+        margin-top: 1em;
+        font-weight: bold;
+        color: #333;
+    }
+
+    form input,
+    form textarea {
+        margin-top: 0.5em;
+        padding: 0.5em;
+        font-size: 1em;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    form button {
+        margin-top: 1em;
+        padding: 0.5em;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+/* Estilo de tarjetas */
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-form input,
-form textarea {
-    margin-top: 0.5em;
-    padding: 0.5em;
-    font-size: 1em;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
 }
 
-form button {
-    margin-top: 1em;
-    padding: 0.5em;
-    background-color: #333;
-    color: #fff;
+.card-body {
+    padding: 1.25rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
     border: none;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
 }
 
- .card img#cardImage {
- 
-    max-width: 50px;
-
-
-}
-
-
-form button:hover {
-    background-color: #555;
-}
-
-body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: aqua;
-}
-
+/* Encabezados */
 h1 {
     color: #333;
     text-align: center;
     font-size: 25px;
+    margin-bottom: 20px;
 }
 
-main {
-    padding: 2em;
-    text-align: justify;
-}
-
-section {
-    margin-bottom: 2em;
-}
-
+/* Estilo del pie de página */
 footer {
     background-color: #ffffff;
-    color: #fff;
+    color: #333;
     text-align: center;
     padding: 1em;
     position: fixed;
@@ -154,4 +176,93 @@ footer {
     bottom: 0;
 }
 
+/* Botones de crear usuario e iniciar sesión */
+.btn-create-user {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
 
+    .btn-create-user:hover {
+        background-color: #0056b3;
+        text-decoration: none;
+        transform: scale(1.05);
+    }
+
+.btn-login {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+    .btn-login:hover {
+        background-color: #c74343;
+        text-decoration: none;
+        transform: scale(1.05);
+    }
+    #headermain {
+    background-color: #f8f9fa;
+}
+
+#logo {
+    max-height: 50px;
+}
+
+.nav {
+    margin: 0;
+}
+
+/* Estilo para las tarjetas */
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+/* Estilo para la sección de servicios */
+#services {
+    background-color: #e9ecef;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+    #services h2 {
+        font-size: 1.5rem;
+    }
+
+/* Estilo para el footer */
+footer {
+    background-color: #f8f9fa;
+    padding: 1em;
+    position: relative; 
+    clear: both; 
+    margin-top: 2em; 
+}
