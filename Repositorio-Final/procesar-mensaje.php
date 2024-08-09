@@ -2,6 +2,8 @@
 session_start();
 include("bd-conexion.php");
 
+header("Location: buzon_cliente.php");
+
 //Verificamos si la variable dentro del array post existe y que su valor no sea null de lo contrario le asignamos null.
 $asunto = isset($_POST["asunto"]) ? $_POST["asunto"] : null;
 $fechaMensaje = isset($_POST["fechaMensaje"]) ? $_POST["fechaMensaje"] : null;

@@ -26,11 +26,11 @@ function validarNumero(inputValue){
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    var botonCrearOferta = document.getElementById("botonCrear");
-    var botonEliminarOferta = document.getElementById("botonEliminar");
+    var botonCrear = document.getElementById("botonCrear");
+    var botonEliminar = document.getElementById("botonEliminar");
     
-    if(botonCrearOferta){
-        botonCrearOferta.addEventListener("click", function (event){
+    if(botonCrear){
+        botonCrear.addEventListener("click", function (event){
             
             var nombreOferta = document.getElementById("nombreOferta").value;
             var descripcionOferta = document.getElementById("descripcionOferta").value;
@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert('Alguno o todos los campos no cumplen con el formato válido o se encuentrán vacíos para crear una oferta.');
             }      
         });
-    }else if(botonEliminarOferta){
-        botonEliminarOferta.addEventListener("click", function (event){
+    }else if(botonEliminar){
+        botonCrear.addEventListener("click", function (event){
             var idOferta = document.getElementById("idOferta").value;
             var idPerfil = document.getElementById("idEmpresa").value;
             var idEmpresa = document.getElementById("idEmpresa").value;

@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
         alert('El elemento no se encontró en el DOM');
 
     }
+    
+        
 
 });
 

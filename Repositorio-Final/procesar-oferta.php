@@ -12,10 +12,10 @@ $idEmpresa = isset($_POST["idEmpresa"]) ? $_POST["idEmpresa"] : null;
 
 
 try{
-    if(isset($_POST["botonCrearOferta"])){
+    if(isset($_POST["botonCrear"])){
         agregarOferta($nombre, $descripcion, $fecha, $idPerfil, $idEmpresa);
         header("Location: crear_oferta.php");
-    }else if(isset($_POST["botonEliminarOferta"])){
+    }else if(isset($_POST["botonEliminar"])){
         eliminarOferta($idOferta, $idPerfil, $idEmpresa);
         header("Location: eliminar_oferta.php");
     }else{
