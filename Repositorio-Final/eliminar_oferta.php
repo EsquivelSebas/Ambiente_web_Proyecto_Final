@@ -45,7 +45,7 @@ session_start();
                     <label for="idEmpresa" class="form-label">Id empresa:</label>
                     <input class="form-control" id="descripcionOferta" name="idEmpresa" required></input>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonEliminar" name="botonEliminar">Eliminar oferta</button>
+                <button type="submit" class="btn btn-primary" id="botonEliminarOferta" name="botonEliminarOferta">Eliminar oferta</button>
             </form>
         </section>
     </main>
