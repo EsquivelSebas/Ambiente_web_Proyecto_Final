@@ -39,13 +39,13 @@ session_start();
                 </div>
                 <div class="mb-3">
                     <label for="idPerfil" class="form-label">Id perfil creador oferta:</label>
-                    <input type="number" class="form-control" id="idPerfil" name="idPerfil" value="<?php echo $_SESSION['id_perfil']; ?>" required>
+                    <input type="number" class="form-control" id="idPerfil" name="idPerfil" value="<?php echo $_SESSION['id_perfil']; ?>" required readonly>
                 </div>
                 <div class="mb-3">
                     <label for="idEmpresa" class="form-label">Id empresa:</label>
                     <input class="form-control" id="descripcionOferta" name="idEmpresa" required></input>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonEliminar" name="botonEliminar">Eliminar oferta</button>
+                <button type="submit" class="btn btn-primary" id="botonEliminarOferta" name="botonEliminarOferta">Eliminar oferta</button>
             </form>
         </section>
     </main>

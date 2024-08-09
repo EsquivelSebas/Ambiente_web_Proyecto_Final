@@ -35,6 +35,8 @@ $ofertas = $_SESSION["ofertas"] ?? array();
             <h2 class="mb-3" id="ofertas">Ofertas disponibles</h2>
             <?php foreach ($ofertas as $oferta): ?>
                 <div>
+                    <p><?php echo $oferta['Nombre_Empresa']; ?></p>
+                    <p><?php echo $oferta['Id_Oferta']; ?></p>
                     <p><?php echo $oferta['Nombre_Oferta']; ?></p>
                     <p><?php echo $oferta['Descripcion_Oferta']; ?></p>
                     <p><?php echo $oferta['Fecha_Oferta']; ?></p>
