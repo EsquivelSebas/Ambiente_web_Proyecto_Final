@@ -9,8 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header class="bg-light py-3" style="color:aqua">
+<body class="d-flex flex-column min-vh-100">
+    <header class="bg-light py-3 border border-dark" style="color:aqua">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </header>
-    <main class="container mt-4">
+    <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
             <h2 class="mb-3" style="color:black">Login</h2>
             <form method="post" action="procesar-login.php">
@@ -42,8 +42,10 @@
             </form>
         </section>
     </main>
-    <footer class="bg-light py-3 mt-4">
-        <!-- Contenido del pie de página -->
+    <footer class="bg-light py-3 mt-4 border border-dark">
+        <div class="container">
+            <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
+        </div>
     </footer>
 </body>
 </html>

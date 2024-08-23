@@ -13,7 +13,7 @@ $ofertas = $_SESSION["ofertas"] ?? array();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header class="bg-light py-3">
         <div class="container">
             <div class="row align-items-center">
@@ -30,22 +30,27 @@ $ofertas = $_SESSION["ofertas"] ?? array();
             </div>
         </div>
     </header>
-    <main class="container mt-4">
+    <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
             <h2 class="mb-3" id="ofertas">Ofertas disponibles</h2>
-            <?php foreach ($ofertas as $oferta): ?>
-                <div>
-                    <p><?php echo $oferta['Nombre_Empresa']; ?></p>
-                    <p><?php echo $oferta['Id_Oferta']; ?></p>
-                    <p><?php echo $oferta['Nombre_Oferta']; ?></p>
-                    <p><?php echo $oferta['Descripcion_Oferta']; ?></p>
-                    <p><?php echo $oferta['Fecha_Oferta']; ?></p>
-                    <p><?php echo $oferta['Nombre_Empresa']; ?></p>
-                </div>
-                <?php endforeach; ?>
+            <div class="row">
+                <?php foreach ($ofertas as $oferta): ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-lg">
+                            <div class="card-body bg-light border border-primary rounded">
+                                <p class="card-text"><strong>Nombre empresa:</strong> <?php echo $oferta['Nombre_Empresa']; ?></p>
+                                <p class="card-text"><strong>Id oferta:</strong> <?php echo $oferta['Id_Oferta']; ?></p>
+                                <p class="card-text"><strong>Nombre oferta:</strong> <?php echo $oferta['Nombre_Oferta']; ?></p>
+                                <p class="card-text"><strong>Descripción:</strong> <?php echo $oferta['Descripcion_Oferta']; ?></p>
+                                <p class="card-text"><strong>Fecha publicación:</strong> <?php echo $oferta['Fecha_Oferta']; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+            </div>
         </section>
     </main>
-    <footer class="bg-light py-3 mt-4">
+    <footer class="bg-light py-3 mt-4 border border-dark">
         <div class="container">
             <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>

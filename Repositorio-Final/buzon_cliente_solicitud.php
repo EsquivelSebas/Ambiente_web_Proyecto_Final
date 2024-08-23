@@ -1,5 +1,6 @@
 <?php
 session_start();
+$solicitudes = $_SESSION["solicitudes"] ?? array();
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +9,6 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación</title>
-    <script src="./verificar-oferta.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -31,22 +31,19 @@ session_start();
     </header>
     <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
-            <h2 class="mb-3">Eliminar oferta</h2>
-            <form method="post" action="procesar-oferta.php">
-                <div class="mb-3">
-                    <label for="idOferta" class="form-label">Id oferta:</label>
-                    <input type="number" class="form-control" id="idOferta" name="idOferta" required>
-                </div>
-                <div class="mb-3">
-                    <label for="idPerfil" class="form-label">Id perfil creador oferta:</label>
-                    <input type="number" class="form-control" id="idPerfil" name="idPerfil" value="<?php echo $_SESSION['id_perfil']; ?>" required readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="idEmpresa" class="form-label">Id empresa:</label>
-                    <input class="form-control" id="descripcionOferta" name="idEmpresa" required></input>
-                </div>
-                <button type="submit" class="btn btn-primary" id="botonEliminarOferta" name="botonEliminarOferta">Eliminar oferta</button>
-            </form>
+            <h2 class="mb-3" id="solicitudes">Solicitudes creadas</h2>
+            <div class="row">
+                <?php foreach ($solicitudes as $solicitud): ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-lg">
+                            <div class="card-body bg-light border border-primary rounded">
+                                <p class="card-text"><strong>Nombre oferta:</strong><?php echo $solicitud['Id_Oferta']; ?></h5>
+                                <p class="card-text"><strong>CV aplicante:</strong> <?php echo $solicitud['CV_Aplicante']; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+            </div>
         </section>
     </main>
     <footer class="bg-light py-3 mt-4 border border-dark">

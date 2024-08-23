@@ -12,7 +12,7 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header class="bg-light py-3">
         <div class="container">
             <div class="row align-items-center">
@@ -29,7 +29,7 @@ session_start();
             </div>
         </div>
     </header>
-    <main class="container mt-4">
+    <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
             <h2 class="mb-3">Crear oferta</h2>
             <form method="post" action="procesar-oferta.php">
@@ -57,7 +57,7 @@ session_start();
             </form>
         </section>
     </main>
-    <footer class="bg-light py-3 mt-4">
+    <footer class="bg-light py-3 mt-4 border border-dark">
         <div class="container">
             <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>

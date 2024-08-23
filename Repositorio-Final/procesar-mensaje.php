@@ -1,5 +1,4 @@
 <?php
-session_start();
 include("bd-conexion.php");
 
 //Verificamos si la variable dentro del array post existe y que su valor no sea null de lo contrario le asignamos null.

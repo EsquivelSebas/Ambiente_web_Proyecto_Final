@@ -13,9 +13,11 @@ $idEmpresa = isset($_POST["idEmpresa"]) ? $_POST["idEmpresa"] : null;
 
 try{
     if(isset($_POST["botonCrearOferta"])){
+        verificarEmpresa($idEmpresa);
         agregarOferta($nombre, $descripcion, $fecha, $idPerfil, $idEmpresa);
         header("Location: crear_oferta.php");
     }else if(isset($_POST["botonEliminarOferta"])){
+        eliminarSolicitud($idOferta);
         eliminarOferta($idOferta, $idPerfil, $idEmpresa);
         header("Location: eliminar_oferta.php");
     }else{
@@ -29,6 +31,25 @@ try{
 
 //Limpiamos las variables después de usarlas.
 $_POST = array();
+
+function verificarEmpresa($idEmpresa){
+    global $conexion;
+    // Creamos la consulta para verificar si el id de la empresa existe en la base de datos.
+    $consulta = $conexion->prepare("SELECT COUNT(*) FROM empresa WHERE id_empresa = ?");
+    // Vinculamos el parámetro con la consulta a la consulta.
+    $consulta->bind_param("i", $idEmpresa);
+    // Si al ejecutar la declaración nos da error lanzamos una excepción.
+    if(!$consulta->execute()){
+        throw new Exception("Error al verificar la empresa: " . $consulta->error);
+    }
+    $consulta->bind_result($count);
+    $consulta->fetch();
+    // Si el id de la empresa no existe lanzamos una excepción.
+    if($count == 0){
+        throw new Exception("El id de la empresa seleccionado no existe en la base de datos.");
+    }
+    $consulta->close();
+}
 
 function agregarOferta($nombre, $descripcion, $fecha, $idPerfil, $idEmpresa) {
     global $conexion;
@@ -44,12 +65,22 @@ function agregarOferta($nombre, $descripcion, $fecha, $idPerfil, $idEmpresa) {
     $declaracion->close();
 }
 
+function eliminarSolicitud($idOferta){
+    global $conexion;
+    $declaracion = $conexion->prepare("DELETE FROM `solicitud_empleo` WHERE Id_Oferta = ?");
+    $declaracion->bind_param("i", $idOferta);
+    if(!$declaracion->execute()){
+        throw new Exception("Error al eliminar la información: " .$declaracion->error);
+    }
+    $declaracion->close();
+}
+
 function eliminarOferta($idOferta, $idPerfil, $idEmpresa) {
     global $conexion;
     $declaracion = $conexion->prepare("DELETE FROM `oferta_empleo` WHERE Id_Oferta = ? AND Id_Perfil = ? AND Id_Empresa = ?");
     $declaracion->bind_param("iii", $idOferta, $idPerfil, $idEmpresa);
     if(!$declaracion->execute()){
-        throw new Exception("Error al eliminar la información: " .$declaracion->error);
+        throw new Exception("Error al eliminar la oferta de empleo: " .$declaracion->error);
     }
     $declaracion->close();
 }

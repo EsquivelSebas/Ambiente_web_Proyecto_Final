@@ -12,7 +12,7 @@ $mensajes = $_SESSION["mensajes"] ?? array();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header class="bg-light py-3">
         <div class="container">
             <div class="row align-items-center">
@@ -29,18 +29,25 @@ $mensajes = $_SESSION["mensajes"] ?? array();
             </div>
         </div>
     </header>
-    <main class="container mt-4">
+    <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
-            <?php foreach ($mensajes as $mensaje): ?>
-                <div>
-                    <p><?php echo $mensaje['Id_Mensaje']; ?></p>
-                    <p><?php echo $mensaje['Asunto']; ?></p>
-                    <p><?php echo $mensaje['Fecha_Envio']; ?></p>
-                </div>
-                <?php endforeach; ?>
+            <h2 class="mb-3" id="mensajes">Buzon</h2>
+            <div class="row">
+                <?php foreach ($mensajes as $mensaje): ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-lg">
+                            <div class="card-body bg-light border border-primary rounded">
+                                <p class="card-text"><strong>Id mensaje:</strong> <?php echo $mensaje['Id_Mensaje']; ?></p>
+                                <p class="card-text"><strong>Asunto:</strong> <?php echo $mensaje['Asunto']; ?></p>
+                                <p class="card-text"><strong>Fecha envío:</strong> <?php echo $mensaje['Fecha_Envio']; ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+            </div>
         </section>
     </main>
-    <footer class="bg-light py-3 mt-4">
+    <footer class="bg-light py-3 mt-4 border border-dark">
         <div class="container">
             <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>
