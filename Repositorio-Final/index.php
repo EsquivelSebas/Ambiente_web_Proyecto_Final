@@ -13,7 +13,7 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header class="bg-light py-3" id="headermain">
         <div class="container">
             <div class="row align-items-center">
@@ -26,11 +26,15 @@ session_start();
                             <?php
                             if (isset($_SESSION["nombre_usuario"]) && $_SESSION["nombre_usuario"] != "") {
                                 if ($_SESSION["nombre_rol"] == "Cliente") {
-                                    echo '<li class="nav-item"><a class="nav-link" href="select-mensaje.php">Buzon personal</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="crear_solicitud.php">Crear solicitud</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="select-mensaje.php">Buzon</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-cliente.php">Solicitudes</a></li>';
                                 } else if ($_SESSION["nombre_rol"] == "Contratador") {
                                     echo '<li class="nav-item"><a class="nav-link" href="crear_oferta.php">Crear oferta</a></li>';
                                     echo '<li class="nav-item"><a class="nav-link" href="eliminar_oferta.php">Eliminar oferta</a></li>';
                                     echo '<li class="nav-item"><a class="nav-link" href="crear_mensaje.php">Crear mensaje</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-contratador.php">Buzon</a></li>';
+                                    
                                 }
                             ?>
                                 <li class="nav-item"><a class="nav-link" href="select-oferta.php">Ofertas</a></li>
@@ -49,7 +53,7 @@ session_start();
         </div>
     </header>
 
-    <main class="container mt-4">
+    <main class="container mt-4 flex-grow-1">
         <section id="home" class="mb-4">
             <h1 class="display-4" style="font-size: 20px;">What's trending</h1>
         </section>
@@ -171,12 +175,12 @@ session_start();
         <!-- Sección de servicios -->
         <section id="services" class="mb-4">
             <h2>Mas sobre nosotros</h2>
-            <p>Nos encargamos de ofrecer siempre los mejores puestos para aquellas personas que lo necesiten, tomando en cuenta su experiencia y profecionalismo, damos la oportunidad a todo aquel que lo necesite</p>
+            <p>Nos encargamos de ofrecer un sin fin de puestos de trabajo para los usuarios que no cuentan con experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
             <a href="contacto.php" class="btn btn-primary">Sobre nosotros</a>
         </section>
     </main>
 
-    <footer class="bg-light py-3 mt-4">
+    <footer class="bg-light py-3 mt-4 border border-dark">
         <div class="container">
             <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>

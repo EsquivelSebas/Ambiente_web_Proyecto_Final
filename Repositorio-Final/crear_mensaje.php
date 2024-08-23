@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,7 +8,7 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header class="bg-light py-3">
         <div class="container">
             <div class="row align-items-center">
@@ -29,7 +25,7 @@ session_start();
             </div>
         </div>
     </header>
-    <main class="container mt-4">
+    <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
             <h2 class="mb-3">Crear mensaje</h2>
             <form method="post" action="procesar-mensaje.php">
@@ -45,11 +41,11 @@ session_start();
                     <label for="idPerfil" class="form-label">Id perfil:</label>
                     <input type="number" class="form-control" id="idPerfil" name="idPerfil" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonCrearMensaje" name="botonCrearMensaje">Enviar mensaje</button>
+                <button type="submit" class="btn btn-primary" id="botonCrearMensaje">Enviar mensaje</button>
             </form>
         </section>
     </main>
-    <footer class="bg-light py-3 mt-4">
+    <footer class="bg-light py-3 mt-4 border border-dark">
         <div class="container">
             <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>

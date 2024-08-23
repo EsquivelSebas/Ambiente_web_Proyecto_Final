@@ -1,0 +1,68 @@
+CREATE DATABASE g8_proyecto;
+
+USE g8_proyecto;
+
+CREATE TABLE Usuario
+(Id_Usuario INT NOT NULL AUTO_INCREMENT PRIMARY KEY, /*PK*/
+Nombre VARCHAR(30) NOT NULL,
+Apellidos VARCHAR(60) NOT NULL,
+Genero VARCHAR(1) NOT NULL
+);
+
+CREATE TABLE Rol
+(Id_Rol INT NOT NULL AUTO_INCREMENT PRIMARY KEY, /*PK*/
+Nombre_Rol VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE Perfil
+(Id_Perfil INT NOT NULL AUTO_INCREMENT PRIMARY KEY, /*PK*/
+Nombre_Usuario VARCHAR(30) NOT NULL,
+Contraseña VARCHAR(50) NOT NULL,
+Id_Usuario INT NOT NULL, /*FK*/
+Id_Rol INT NOT NULL, /*FK*/
+FOREIGN KEY(Id_Usuario) REFERENCES Usuario(Id_Usuario),
+FOREIGN KEY(Id_Rol) REFERENCES Rol(Id_Rol)
+);
+
+CREATE TABLE Empresa(
+Id_Empresa INT NOT NULL AUTO_INCREMENT PRIMARY KEY, /*PK*/
+Nombre_Empresa VARCHAR(60) NOT NULL,
+Descripcion_Empresa VARCHAR(150) NOT NULL
+);
+
+CREATE TABLE Ubicacion(
+Id_Ubicacion INT NOT NULL AUTO_INCREMENT PRIMARY KEY, /*PK*/
+Ubicacion VARCHAR(150) NOT NULL,
+Id_Empresa INT NOT NULL, /*FK*/
+FOREIGN KEY(Id_Empresa) REFERENCES Empresa(Id_Empresa)
+);
+
+CREATE TABLE Oferta_Empleo(
+Id_Oferta INT NOT NULL AUTO_INCREMENT PRIMARY KEY, /*PK*/
+Nombre_Oferta VARCHAR(50) NOT NULL,
+Descripcion_Oferta VARCHAR(150) NOT NULL,
+Fecha_Oferta DATE NOT NULL,
+Id_Perfil INT NOT NULL, /*FK*/
+Id_Empresa INT NOT NULL, /*FK*/
+FOREIGN KEY(Id_Perfil) REFERENCES Perfil(Id_Perfil),
+FOREIGN KEY(Id_Empresa) REFERENCES Empresa(Id_Empresa)
+);
+
+CREATE TABLE Mensajes(
+Id_Mensaje INT NOT NULL AUTO_INCREMENT PRIMARY KEY, /*PK*/
+Asunto VARCHAR(150) NOT NULL,
+Fecha_Envio DATE NOT NULL,
+Id_Perfil INT NOT NULL, /*FK*/
+FOREIGN KEY(Id_Perfil) REFERENCES Perfil(Id_Perfil)
+);
+
+CREATE TABLE Solicitud_Empleo(
+Id_Solicitud INT NOT NULL AUTO_INCREMENT PRIMARY KEY, /*PK*/
+CV_Aplicante VARCHAR(200) NOT NULL,
+Id_Oferta INT NOT NULL, /*FK*/
+Id_Perfil INT NOT NULL, /*FK*/
+FOREIGN KEY(Id_Oferta) REFERENCES Oferta_Empleo(Id_Oferta),
+FOREIGN KEY(Id_Perfil) REFERENCES Perfil(Id_Perfil)
+);
+
+
