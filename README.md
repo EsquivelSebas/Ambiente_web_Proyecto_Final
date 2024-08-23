@@ -40,38 +40,26 @@ The platform is built using modern web technologies to offer a user-friendly exp
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/we-work.git
+    git clone hhttps://github.com/EsquivelSebas/Ambiente_web_Proyecto_Final.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd we-work
+    cd htdos
     ```
 3. Set up the backend:
-    - Ensure you have a PHP server environment set up (e.g., XAMPP, WAMP).
+    - Ensure you have a PHP server environment set up (XAMPP)
     - Place the project files in the `htdocs` directory of your PHP server.
 4. Configure the database:
     - Import the database schema from the provided SQL file to your MySQL database.
-5. Start the PHP server and navigate to `http://localhost/we-work` to view the application.
+5. Start the PHP server and navigate to `http://localhost/Ambiente_web_Proyecto_Final/Repositorio-Final/index.php` to view the application.
 
 ==============================================================================================
 
 ## Usage
 
 - **Job Search**: Use the search and filter options to find job opportunities that match your skills and interests.
-- **Apply for Jobs**: Submit your applications directly through the platform and track their status.
+- **Apply for Jobs**: Submit your applications directly through the platform and track their status by the email sent.
 - **Manage Profile**: Update your profile details, resume, and job preferences.
 - **Receive Notifications**: Stay updated with new job postings and application updates.
-
-==============================================================================================
-
-## Contributing
-
-We welcome contributions! Please read our [contributing guidelines](CONTRIBUTING.md) for more details on how to get involved.
-
-==============================================================================================
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ==============================================================================================
