@@ -3,13 +3,15 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
-$database = "G8_Proyecto";
+$password = "sebas442018";
+$database = "g8_proyecto";
 
 $conexion = new mysqli($servername,$username,$password,$database);
 
-if($conexion->connect_error){
-    die("Conexión fallida: ".$conexion->connect_error);
+if ($conexion->connect_error) {
+    echo "Error de conexión: " . $conexion->connect_error;
+} else {
+    echo "Conexión exitosa";
 }
 
 ?>

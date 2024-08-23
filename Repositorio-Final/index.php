@@ -38,7 +38,7 @@ session_start();
                                 <?php
                             } else { ?>
                                 <li class="nav-item"><a class="nav-link btn-login" href="iniciar_sesion.php">Iniciar sesión</a></li>
-                                <li class="nav-item"><a class="nav-link btn-login" href="crearusuario.php">Crear Usuario Nuevo</a></li>
+                                <li class="nav-item"><a class="nav-link btn-login" href="crear_usuario.php">Crear Usuario Nuevo</a></li>
                             <?php
                             }
                             ?>
