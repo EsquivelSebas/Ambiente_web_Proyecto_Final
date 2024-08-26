@@ -108,10 +108,16 @@ include 'bd-conexion.php';
         </div>
 
         <section id="services" class="mb-4">
+<<<<<<< HEAD
             <h2>Más sobre nosotros</h2>
             <p>Nos encargamos de ofrecer un sin fín de puestos de trabajo para los usuarios que no cuentan con
                 experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
             <a href="contacto.php" class="btn btn-primary">Sobre nosotros</a>
+=======
+            <h2>Mas sobre nosotros</h2>
+            <p>Nos encargamos de ofrecer un sin fin de puestos de trabajo para los usuarios que no cuentan con experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
+            <a href="#" class="btn btn-primary">Sobre nosotros</a>
+>>>>>>> a97d4df9f84405aba885cd1579b561d7eb5646dc
         </section>
     </main>
 

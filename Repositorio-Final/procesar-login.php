@@ -51,4 +51,3 @@ while($fila = $resultado->fetch_assoc()){
 }
 
 ?>
-

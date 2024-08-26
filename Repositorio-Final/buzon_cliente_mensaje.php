@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION['nombre_usuario'])) {
+    header('Location: iniciar_sesion.php');
+    exit();
+}
 $mensajes = $_SESSION["mensajes"] ?? array();
 ?>
 
