@@ -1,11 +1,14 @@
 <?php
+session_start();
 
 //Resetear los valores de las variables de sesión.
-session_unset();
+$_SESSION = array();
 
+//Destruir la sesión.
 session_destroy();
 
-//Redirigimos al usuario al formulario de inicio de sesión.
+//Redirigir al usuario al formulario de inicio de sesión.
 header("Location: iniciar_sesion.php");
+exit();
 ?>
 

@@ -176,7 +176,7 @@ session_start();
         <section id="services" class="mb-4">
             <h2>Mas sobre nosotros</h2>
             <p>Nos encargamos de ofrecer un sin fin de puestos de trabajo para los usuarios que no cuentan con experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
-            <a href="contacto.php" class="btn btn-primary">Sobre nosotros</a>
+            <a href="#" class="btn btn-primary">Sobre nosotros</a>
         </section>
     </main>
 
