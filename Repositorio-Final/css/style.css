@@ -12,6 +12,19 @@ img#logo {
     margin-top: 10px;
 }
 
+img #carrouselimg {
+    max-width: 250px;
+    max-height: 250px;
+}
+
+#carouseltexto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #000;
+}
+
 /* Barra de navegación principal */
 #navbar_main {
     background-color: #ffffff;
@@ -20,31 +33,31 @@ img#logo {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-    /* Estilos de los ítems de la lista */
-    #navbar_main ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 15px;
-    }
+/* Estilos de los ítems de la lista */
+#navbar_main ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
 
-    #navbar_main li {
-        position: relative;
-    }
+#navbar_main li {
+    position: relative;
+}
 
-        #navbar_main li a {
-            text-decoration: none;
-            color: #333;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
+#navbar_main li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-            #navbar_main li a:hover {
-                background-color: darkkhaki;
-                color: #fff;
-            }
+#navbar_main li a:hover {
+    background-color: darkkhaki;
+    color: #fff;
+}
 
 /* Estilo de botón de menú hamburguesa */
 .navbar-toggler {
@@ -68,15 +81,15 @@ img#logo {
     width: 100%;
 }
 
-    .navbar-nav a {
-        padding: 10px 15px;
-        border-radius: 5px;
-    }
+.navbar-nav a {
+    padding: 10px 15px;
+    border-radius: 5px;
+}
 
-        .navbar-nav a:hover {
-            background-color: darkkhaki;
-            color: #fff;
-        }
+.navbar-nav a:hover {
+    background-color: darkkhaki;
+    color: #fff;
+}
 
 /* Estilo de botones */
 .btn-primary {
@@ -89,9 +102,9 @@ img#logo {
     transition: background-color 0.3s;
 }
 
-    .btn-primary:hover {
-        background-color: #a89e5f;
-    }
+.btn-primary:hover {
+    background-color: #a89e5f;
+}
 
 /* Estilo del formulario */
 form {
@@ -105,36 +118,36 @@ form {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-    form label {
-        margin-top: 1em;
-        font-weight: bold;
-        color: #333;
-    }
+form label {
+    margin-top: 1em;
+    font-weight: bold;
+    color: #333;
+}
 
-    form input,
-    form textarea {
-        margin-top: 0.5em;
-        padding: 0.5em;
-        font-size: 1em;
-        width: 100%;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
+form input,
+form textarea {
+    margin-top: 0.5em;
+    padding: 0.5em;
+    font-size: 1em;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-    form button {
-        margin-top: 1em;
-        padding: 0.5em;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: background-color 0.3s;
-    }
+form button {
+    margin-top: 1em;
+    padding: 0.5em;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
 
-        form button:hover {
-            background-color: #555;
-        }
+form button:hover {
+    background-color: #555;
+}
 
 /* Estilo de tarjetas */
 .card {
@@ -190,11 +203,11 @@ footer {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-    .btn-create-user:hover {
-        background-color: #0056b3;
-        text-decoration: none;
-        transform: scale(1.05);
-    }
+.btn-create-user:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+    transform: scale(1.05);
+}
 
 .btn-login {
     background-color: #ff6f61;
@@ -209,12 +222,13 @@ footer {
     transition: background-color 0.3s, transform 0.3s;
 }
 
-    .btn-login:hover {
-        background-color: #c74343;
-        text-decoration: none;
-        transform: scale(1.05);
-    }
-    #headermain {
+.btn-login:hover {
+    background-color: #c74343;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+#headermain {
     background-color: #f8f9fa;
 }
 
@@ -254,15 +268,15 @@ footer {
     border-radius: 8px;
 }
 
-    #services h2 {
-        font-size: 1.5rem;
-    }
+#services h2 {
+    font-size: 1.5rem;
+}
 
 /* Estilo para el footer */
 footer {
     background-color: #f8f9fa;
     padding: 1em;
-    position: relative; 
-    clear: both; 
-    margin-top: 2em; 
+    position: relative;
+    clear: both;
+    margin-top: 2em;
 }

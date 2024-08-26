@@ -4,6 +4,7 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@ session_start();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="d-flex flex-column min-vh-100">
     <header class="bg-light py-3">
         <div class="container">
@@ -47,13 +49,24 @@ session_start();
                 </div>
                 <div class="mb-3">
                     <label for="idPerfil" class="form-label">Id perfil:</label>
-                    <input type="number" class="form-control" id="idPerfil" name="idPerfil" value="<?php echo $_SESSION['id_perfil']; ?>" required readonly>
+                    <input type="number" class="form-control" id="idPerfil" name="idPerfil"
+                        value="<?php echo $_SESSION['id_perfil']; ?>" required readonly>
                 </div>
                 <div class="mb-3">
                     <label for="idEmpresa" class="form-label">Id empresa:</label>
                     <input type="number" class="form-control" id="idEmpresa" name="idEmpresa" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonCrearOferta" name="botonCrearOferta">Crear oferta</button>
+                <div class="mb-3">
+                    <label for="categoriaImagen" class="form-label">Categoria de la oferta:</label>
+                    <select class="form-control" id="categoriaImagen" name="categoriaImagen" required>
+                        <option value="electronica">Electronica</option>
+                        <option value="computacion">Computacion</option>
+                        <option value="administracion">Administracion de empresas</option>
+                        <option value="administracion">Administracion de proyectos</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" id="botonCrearOferta" name="botonCrearOferta">Crear
+                    oferta</button>
             </form>
         </section>
     </main>
@@ -63,4 +76,5 @@ session_start();
         </div>
     </footer>
 </body>
+
 </html>

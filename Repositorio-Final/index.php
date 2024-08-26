@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'bd-conexion.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,23 +28,24 @@ session_start();
                             if (isset($_SESSION["nombre_usuario"]) && $_SESSION["nombre_usuario"] != "") {
                                 if ($_SESSION["nombre_rol"] == "Cliente") {
                                     echo '<li class="nav-item"><a class="nav-link" href="crear_solicitud.php">Crear solicitud</a></li>';
-                                    echo '<li class="nav-item"><a class="nav-link" href="select-mensaje.php">Buzon</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="select-mensaje.php">Buzón</a></li>';
                                     echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-cliente.php">Solicitudes</a></li>';
                                 } else if ($_SESSION["nombre_rol"] == "Contratador") {
                                     echo '<li class="nav-item"><a class="nav-link" href="crear_oferta.php">Crear oferta</a></li>';
                                     echo '<li class="nav-item"><a class="nav-link" href="eliminar_oferta.php">Eliminar oferta</a></li>';
                                     echo '<li class="nav-item"><a class="nav-link" href="crear_mensaje.php">Crear mensaje</a></li>';
-                                    echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-contratador.php">Buzon</a></li>';
-                                    
+                                    echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-contratador.php">Buzón</a></li>';
                                 }
-                            ?>
+                                ?>
                                 <li class="nav-item"><a class="nav-link" href="select-oferta.php">Ofertas</a></li>
                                 <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar sesión</a></li>
                                 <?php
                             } else { ?>
-                                <li class="nav-item"><a class="nav-link btn-login" href="iniciar_sesion.php">Iniciar sesión</a></li>
-                                <li class="nav-item"><a class="nav-link btn-login" href="crear_usuario.php">Crear Usuario Nuevo</a></li>
-                            <?php
+                                <li class="nav-item"><a class="nav-link btn-login" href="iniciar_sesion.php">Iniciar
+                                        sesión</a></li>
+                                <li class="nav-item"><a class="nav-link btn-login" href="crear_usuario.php">Crear Usuario
+                                        Nuevo</a></li>
+                                <?php
                             }
                             ?>
                         </ul>
@@ -58,124 +60,57 @@ session_start();
             <h1 class="display-4" style="font-size: 20px;">What's trending</h1>
         </section>
 
-        <!-- Tarjetas de ofertas de trabajo -->
-        <div class="row mb-4">
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/Intel-logo-2022.png" id="cardImage" class="card-img-top" alt="Oferta 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Tecnico Maquinaria</h5>
-                        <p class="card-text">Click para mas detalles.</p>
-                        <a href="#" class="btn btn-primary">Portal</a>
+        <!-- Carrusel de Bootstrap -->
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/intellogo.jpg" id="carrouselimg" class="d-block w-100" alt="Slide 1">
+                    <div class="carousel-caption d-none d-md-block" id="carouseltexto">
+                        <h5>Intel New CPU</h5>
+                        <p>Intel has officially confirmed that its 15th generation processors, known as “Arrow Lake,” are set to launch in the fourth quarter of 2024.</p>
                     </div>
                 </div>
-            </div>
+                <div class="carousel-item">
+                    <img src="img/mc3.jpg" id="carrouselimg" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption d-none d-md-block" id="carouseltexto">
+                        <h5 style="color: aliceblue;">New Intership opportunities</h5>
+                        <p style="color: aliceblue;">Microsoft just launched diverse internship programs for students eager to learn about AI models and machine learning.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-caption d-none d-md-block" id="carouseltexto">
+                        <h5 id="">Nuevo modelo GPT 4.0</h5>
+                        <p>An updated version of GPT-4 Turbo – the Large Language Model (LLM) that powers the paid version of ChatGPT – has been released</p>
+                    </div>
 
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/social_default_image.png" id="cardImage" class="card-img-top" alt="Oferta 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Voluntario</h5>
-                        <p class="card-text">Click para mas detalles.</p>
-                        <a href="#" class="btn btn-primary">Portal</a>
-                    </div>
-                </div>
-            </div>
+                    <img src="img/chatgpt.jpg" id="carrouselimg" class="d-block w-100" alt="Slide 3">
 
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/social_default_image.png" id="cardImage" class="card-img-top" alt="Oferta 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Voluntario</h5>
-                        <p class="card-text">Click para mas detalles.</p>
-                        <a href="#" class="btn btn-primary">Portal</a>
-                    </div>
                 </div>
             </div>
-
-            <!-- Repite para más ofertas de trabajo -->
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/ICE.png" id="cardImage" class="card-img-top" alt="Oferta 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Electricista</h5>
-                        <p class="card-text">Click para mas detalles.</p>
-                        <a href="#" class="btn btn-primary">Portal</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/Logo_Muni.png" id="cardImage" class="card-img-top" alt="Oferta 5">
-                    <div class="card-body">
-                        <h5 class="card-title">Voluntario</h5>
-                        <p class="card-text">Click para mas detalles.</p>
-                        <a href="#" class="btn btn-primary">Portal</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/IMAS-logo.png" id="cardImage" class="card-img-top" alt="Oferta 6">
-                    <div class="card-body">
-                        <h5 class="card-title">Voluntario</h5>
-                        <p class="card-text">Click para mas detalles.</p>
-                        <a href="#" class="btn btn-primary">Portal</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/social_default_image.png" id="cardImage" class="card-img-top" alt="Oferta 7">
-                    <div class="card-body">
-                        <h5 class="card-title">Voluntario</h5>
-                        <p class="card-text">Click para mas detalles.</p>
-                        <a href="#" class="btn btn-primary">Portal</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/IMAS-logo.png" id="cardImage" class="card-img-top" alt="Oferta 8">
-                    <div class="card-body">
-                        <h5 class="card-title">Voluntario</h5>
-                        <p class="card-text">Click para mas detalles.</p>
-                        <a href="#" class="btn btn-primary">Portal</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/Logo_Muni.png" id="cardImage" class="card-img-top" alt="Oferta 9">
-                    <div class="card-body">
-                        <h5 class="card-title">Voluntario</h5>
-                        <p class="card-text">Click para mas detalles.</p>
-                        <a href="#" class="btn btn-primary">Portal</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="img/ICE.png" id="cardImage" class="card-img-top" alt="Oferta 10">
-                    <div class="card-body">
-                        <h5 class="card-title">Asistente Electricista</h5>
-                        <p class="card-text">Click para mas detalles.</p>
-                        <a href="#" class="btn btn-primary">Portal</a>
-                    </div>
-                </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
 
-        <!-- Sección de servicios -->
         <section id="services" class="mb-4">
-            <h2>Mas sobre nosotros</h2>
-            <p>Nos encargamos de ofrecer un sin fin de puestos de trabajo para los usuarios que no cuentan con experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
+            <h2>Más sobre nosotros</h2>
+            <p>Nos encargamos de ofrecer un sin fín de puestos de trabajo para los usuarios que no cuentan con
+                experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
             <a href="contacto.php" class="btn btn-primary">Sobre nosotros</a>
         </section>
     </main>
@@ -185,6 +120,9 @@ session_start();
             <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </body>
 
 </html>

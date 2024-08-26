@@ -42,6 +42,7 @@ Id_Oferta INT NOT NULL AUTO_INCREMENT PRIMARY KEY, /*PK*/
 Nombre_Oferta VARCHAR(50) NOT NULL,
 Descripcion_Oferta VARCHAR(150) NOT NULL,
 Fecha_Oferta DATE NOT NULL,
+
 Id_Perfil INT NOT NULL, /*FK*/
 Id_Empresa INT NOT NULL, /*FK*/
 FOREIGN KEY(Id_Perfil) REFERENCES Perfil(Id_Perfil),
