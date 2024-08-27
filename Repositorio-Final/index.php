@@ -38,13 +38,12 @@ include 'bd-conexion.php';
                                 }
                                 ?>
                                 <li class="nav-item"><a class="nav-link" href="select-oferta.php">Ofertas</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ofertas2.php">Ofertas 2</a></li>
                                 <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar sesión</a></li>
                                 <?php
                             } else { ?>
-                                <li class="nav-item"><a class="nav-link btn-login" href="iniciar_sesion.php">Iniciar
-                                        sesión</a></li>
-                                <li class="nav-item"><a class="nav-link btn-login" href="crear_usuario.php">Crear Usuario
-                                        Nuevo</a></li>
+                                <li class="nav-item"><a class="nav-link btn-login" href="iniciar_sesion.php">Iniciar sesión</a></li>
+                                <li class="nav-item"><a class="nav-link btn-login" href="crear_usuario.php">Crear Usuario Nuevo</a></li>
                                 <?php
                             }
                             ?>
@@ -90,9 +89,7 @@ include 'bd-conexion.php';
                         <h5 id="">Nuevo modelo GPT 4.0</h5>
                         <p>An updated version of GPT-4 Turbo – the Large Language Model (LLM) that powers the paid version of ChatGPT – has been released</p>
                     </div>
-
                     <img src="img/chatgpt.jpg" id="carrouselimg" class="d-block w-100" alt="Slide 3">
-
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -108,16 +105,10 @@ include 'bd-conexion.php';
         </div>
 
         <section id="services" class="mb-4">
-<<<<<<< HEAD
             <h2>Más sobre nosotros</h2>
-            <p>Nos encargamos de ofrecer un sin fín de puestos de trabajo para los usuarios que no cuentan con
-                experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
+            <p>Nos encargamos de ofrecer un sin fín de puestos de trabajo para los usuarios que no cuentan con experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
             <a href="contacto.php" class="btn btn-primary">Sobre nosotros</a>
-=======
-            <h2>Mas sobre nosotros</h2>
-            <p>Nos encargamos de ofrecer un sin fin de puestos de trabajo para los usuarios que no cuentan con experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
-            <a href="#" class="btn btn-primary">Sobre nosotros</a>
->>>>>>> a97d4df9f84405aba885cd1579b561d7eb5646dc
+
         </section>
     </main>
 
@@ -128,7 +119,6 @@ include 'bd-conexion.php';
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 </body>
 
 </html>
