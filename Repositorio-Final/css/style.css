@@ -54,48 +54,80 @@ img #carrouselimg {
 
 /* Barra de navegación principal */
 #navbar_main {
-    background-color: #ffffff;
-    justify-content: center;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(13deg, #4caf50, #96d499) !important;
+    padding: 15px 30px;
+    box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
-
+.navbar-light {
+    background-color: transparent !important;
+}
+.navbar-nav .nav-link {
+    color: #ffffff !important;
+}
 /* Estilos de los ítems de la lista */
 #navbar_main ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 25px;
 }
 
 #navbar_main li {
     position: relative;
+    overflow: hidden; 
 }
 
 #navbar_main li a {
     text-decoration: none;
-    color: #333;
+    color: #010405;
+    font-size: 18px;
     padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+#navbar_main li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s ease;
+    transform: translateX(-110%); 
+    z-index: 0;
+}
+#navbar_main li a:hover::before {
+    transform: translateX(0); 
 }
 
 #navbar_main li a:hover {
-    background-color: darkkhaki;
-    color: #fff;
+    color: #4caf50;
 }
 
 /* Estilo de botón de menú hamburguesa */
 .navbar-toggler {
-    border: none;
-    background: transparent;
-    padding: 0;
+    display: none; 
 }
 
 .navbar-toggler-icon {
     background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"%3E%3Cpath stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /%3E%3C/svg%3E');
 }
+/* Efectos adicionales para el menú */
+#navbar_main:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10); 
+}
+
 
 /* Estilo del menú desplegable */
 .navbar-collapse {
