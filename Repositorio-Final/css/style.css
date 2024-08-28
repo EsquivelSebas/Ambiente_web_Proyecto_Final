@@ -108,8 +108,8 @@ img #carrouselimg {
     z-index: 0;
 }
 #navbar_main li a:hover::before {
-    transform: translateX(2);
-    transform: translateY(1); 
+    transform: translateX(0);
+
 }
 
 #navbar_main li a:hover {
