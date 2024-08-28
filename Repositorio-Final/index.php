@@ -22,7 +22,6 @@ include 'bd-conexion.php';
                     <img src="img/LOGOAMBIENTEWEB.png" alt="Logo" id="logo" class="img-fluid">
                 </div>
                 <div class="col-md-8">
-<<<<<<< HEAD
                     <nav>
                         <ul class="nav justify-content-end" id="navbar_main1">
                             <?php
@@ -49,40 +48,6 @@ include 'bd-conexion.php';
                             }
                             ?>
                         </ul>
-=======
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <div class="container">
-                            <a class="navbar-brand" href="#"></a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_main1" aria-controls="navbar_main1" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse" id="navbar_main1">
-                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                                    <?php
-                                    if (isset($_SESSION["nombre_usuario"]) && $_SESSION["nombre_usuario"] != "") {
-                                        if ($_SESSION["nombre_rol"] == "Cliente") {
-                                            echo '<li class="nav-item"><a class="nav-link" href="crear_solicitud.php">Crear solicitud</a></li>';
-                                            echo '<li class="nav-item"><a class="nav-link" href="select-mensaje.php">Buzón</a></li>';
-                                            echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-cliente.php">Solicitudes</a></li>';
-                                        } else if ($_SESSION["nombre_rol"] == "Contratador") {
-                                            echo '<li class="nav-item"><a class="nav-link" href="crear_oferta.php">Crear oferta</a></li>';
-                                            echo '<li class="nav-item"><a class="nav-link" href="eliminar_oferta.php">Eliminar oferta</a></li>';
-                                            echo '<li class="nav-item"><a class="nav-link" href="crear_mensaje.php">Crear mensaje</a></li>';
-                                            echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-contratador.php">Buzón</a></li>';
-                                        }
-                                    ?>
-                                        <li class="nav-item"><a class="nav-link" href="select-oferta.php">Ofertas</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar sesión</a></li>
-                                        <?php
-                                    } else { ?>
-                                        <li class="nav-item"><a class="nav-link btn-login" href="iniciar_sesion.php">Iniciar sesión</a></li>
-                                    <?php
-                                    }
-                                    ?>
-                                </ul>
-                            </div>
-                        </div>
->>>>>>> 6eb791583d38f1a1924403bcbb62baf070a8d076
                     </nav>
                 </div>
             </div>
@@ -140,17 +105,10 @@ include 'bd-conexion.php';
         </div>
 
         <section id="services" class="mb-4">
-<<<<<<< HEAD
             <h2>Más sobre nosotros</h2>
             <p>Nos encargamos de ofrecer un sin fín de puestos de trabajo para los usuarios que no cuentan con experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
-            <a href="contacto.php" class="btn btn-primary">Sobre nosotros</a>
+            <a href="contacto.php" class="btn btn-primary bg-light" >Sobre nosotros</a>
 
-=======
-        <h2>Más sobre nosotros</h2>
-            <p>Nos encargamos de ofrecer un sin fín de puestos de trabajo para los usuarios que no cuentan con
-                experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
-            <a href="contacto.php" class="btn btn-primary">Sobre nosotros</a>
->>>>>>> 6eb791583d38f1a1924403bcbb62baf070a8d076
         </section>
     </main>
 

@@ -23,7 +23,7 @@ img #carrouselimg {
     color: white; /* Opcional: Cambia el color del texto para mejorar la visibilidad sobre la imagen */
 }
 
-}
+
 #cardtinder {
     width: 80%; /* Ajusta el ancho */
     max-width: 600px; /* Ancho máximo */
@@ -108,11 +108,12 @@ img #carrouselimg {
     z-index: 0;
 }
 #navbar_main li a:hover::before {
-    transform: translateX(0); 
+    transform: translateX(2);
+    transform: translateY(1); 
 }
 
 #navbar_main li a:hover {
-    color: #4caf50;
+    color: #ccc;
 }
 
 /* Estilo de botón de menú hamburguesa */
@@ -288,7 +289,7 @@ footer {
 }
 
 #headermain {
-    background-color: #f8f9fa;
+    background-color: #4caf50;
 }
 
 #logo {
