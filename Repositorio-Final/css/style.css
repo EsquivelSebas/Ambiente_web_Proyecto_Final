@@ -16,6 +16,33 @@ img #carrouselimg {
     max-width: 250px;
     max-height: 250px;
 }
+#crdbcg {
+    background-image: url('path/to/your/image.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para cubrir toda la tarjeta */
+    background-position: center; /* Centra la imagen en la tarjeta */
+    color: white; /* Opcional: Cambia el color del texto para mejorar la visibilidad sobre la imagen */
+}
+
+
+#cardtinder {
+    width: 80%; /* Ajusta el ancho */
+    max-width: 600px; /* Ancho máximo */
+    height: 500px; /* Altura */
+    max-height: 80vh; /* Altura máxima */
+    margin: 0 auto; /* Centra horizontalmente */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Orienta los elementos verticalmente */
+    justify-content: space-between; /* Distribuye el espacio entre el contenido y los botones */
+}
+
+
+.card-body {
+    flex: 1; 
+}
+
+#siguienteBtn, #aplicarBoton {
+    
+}
 
 #carouseltexto {
     position: absolute;
@@ -81,11 +108,12 @@ img #carrouselimg {
     z-index: 0;
 }
 #navbar_main li a:hover::before {
-    transform: translateX(0); 
+    transform: translateX(2);
+    transform: translateY(1); 
 }
 
 #navbar_main li a:hover {
-    color: #4caf50;
+    color: #ccc;
 }
 
 /* Estilo de botón de menú hamburguesa */
@@ -261,7 +289,7 @@ footer {
 }
 
 #headermain {
-    background-color: #f8f9fa;
+    background-color: #4caf50;
 }
 
 #logo {
