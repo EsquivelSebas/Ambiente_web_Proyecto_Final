@@ -20,14 +20,14 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
 </head>
 
 <body class="d-flex flex-column min-vh-100" style=" background-image: url('img/fondo2.jpg'); background-size: cover;">
-    <header class="bg-light py-3">
+    <header id="navbar_main" class="top-navigation" style="padding-bottom:15px;padding-top:5px">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4">
                     <img src="img/LOGOAMBIENTEWEB.png" alt="Logo" id="logo" class="img-fluid">
                 </div>
                 <div class="col-md-8">
-                    <nav id="navbar_main">
+                    <nav id="navbar_main bg-light py-3">
                         <ul class="nav justify-content-end">
                             <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
                         </ul>
@@ -40,7 +40,7 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
         <div class="row">
             <div class="col-md-12">
                 <section id="contact" class="mb-4 mt-4">
-                    <h2 class="mb-3" id="">Solicitudes</h2>
+                    <h2 class="mb-3" style="padding-bottom:1px;padding-top:70px" id="">Solicitudes</h2>
                     <div class="mb-3">
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"

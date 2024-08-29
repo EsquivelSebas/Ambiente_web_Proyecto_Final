@@ -20,14 +20,14 @@ if (!isset($_SESSION['nombre_usuario'])) {
 </head>
 
 <body class="d-flex flex-column min-vh-100"  style=" background-image: url('img/fondo2.jpg'); background-size: cover;">
-    <header class="bg-light py-3">
-        <div class="container">
+    <header id="navbar_main" class="top-navigation" style="padding-bottom:15px;padding-top:5px" >
+        <div class=" sticky-header-container container">
             <div class="row align-items-center">
                 <div class="col-md-4">
                     <img src="img/LOGOAMBIENTEWEB.png" alt="Logo" id="logo" class="img-fluid">
                 </div>
                 <div class="col-md-8">
-                    <nav id="navbar_main">
+                    <nav id="bg-light py-3">
                         <ul class="nav justify-content-end">
                             <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
                         </ul>
@@ -36,9 +36,9 @@ if (!isset($_SESSION['nombre_usuario'])) {
             </div>
         </div>
     </header>
-    <main class="container mt-4 flex-grow-1">
-        <section id="contact" class="mb-4">
-            <h2 class="mb-3">Crear oferta</h2>
+    <main class=" container mt-4 flex-grow-1" >
+        <section id="contact" class="mb-4" >
+            <h2 class="mb-4" style="padding-bottom:1px;padding-top:70px">Crear oferta</h2>
             <form method="post" action="procesar-oferta.php">
                 <div class="mb-3">
                     <label for="nombreOferta" class="form-label">Nombre oferta:</label>
