@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['nombre_usuario'])) {
+    header('Location: iniciar_sesion.php');
+    exit();
+}
+
 include("bd-conexion.php");
 
 //Verificamos si la variable dentro del array post existe y que su valor no sea null de lo contrario le asignamos null.

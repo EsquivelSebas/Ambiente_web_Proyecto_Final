@@ -1,10 +1,12 @@
 
 <?php
 session_start();
+
 if (!isset($_SESSION['nombre_usuario'])) {
     header('Location: iniciar_sesion.php');
     exit();
 }
+
 $solicitudes = $_SESSION["solicitudes"] ?? array();
 $ofertas = array_unique(array_column($solicitudes, 'Nombre_Oferta'));
 

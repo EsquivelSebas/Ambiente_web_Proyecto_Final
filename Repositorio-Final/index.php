@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['nombre_usuario'])) {
+    header('Location: iniciar_sesion.php');
+    exit();
+}
+
 include 'bd-conexion.php';
 ?>
 
@@ -116,7 +122,7 @@ include 'bd-conexion.php';
         <h2>Más sobre nosotros</h2>
             <p>Nos encargamos de ofrecer un sin fín de puestos de trabajo para los usuarios que no cuentan con
                 experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
-            <a href="contacto.php" class="btn btn-primary">Sobre nosotros</a>
+            <a href="#" class="btn btn-primary">Sobre nosotros</a>
         </section>
     </main>
 

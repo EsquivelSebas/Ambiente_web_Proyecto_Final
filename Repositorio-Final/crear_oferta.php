@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['nombre_usuario'])) {
     header('Location: iniciar_sesion.php');
     exit();
@@ -59,15 +60,6 @@ if (!isset($_SESSION['nombre_usuario'])) {
                 <div class="mb-3">
                     <label for="idEmpresa" class="form-label">Id empresa:</label>
                     <input type="number" class="form-control" id="idEmpresa" name="idEmpresa" required>
-                </div>
-                <div class="mb-3">
-                    <label for="categoriaImagen" class="form-label">Categoria de la oferta:</label>
-                    <select class="form-control" id="categoriaImagen" name="categoriaImagen" required>
-                        <option value="electronica">Electronica</option>
-                        <option value="computacion">Computacion</option>
-                        <option value="administracion">Administracion de empresas</option>
-                        <option value="administracion">Administracion de proyectos</option>
-                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary" id="botonCrearOferta" name="botonCrearOferta">Crear
                     oferta</button>
