@@ -66,4 +66,18 @@ FOREIGN KEY(Id_Oferta) REFERENCES Oferta_Empleo(Id_Oferta),
 FOREIGN KEY(Id_Perfil) REFERENCES Perfil(Id_Perfil)
 );
 
+INSERTS
+INSERT INTO `usuario`(`Id_Usuario`, `Nombre`, `Apellidos`, `Genero`) VALUES ('1','Luis','Valverde Urbina','M');
+INSERT INTO `usuario`(`Id_Usuario`, `Nombre`, `Apellidos`, `Genero`) VALUES ('2','Pedro','Mora Quesada','M');
+INSERT INTO `usuario`(`Id_Usuario`, `Nombre`, `Apellidos`, `Genero`) VALUES ('3','Bryan','Soto Smith','M');
+INSERT INTO `rol`(`Id_Rol`, `Nombre_Rol`) VALUES ('1','Contratador');
+INSERT INTO `rol`(`Id_Rol`, `Nombre_Rol`) VALUES ('2','Cliente');
+INSERT INTO `perfil`(`Id_Perfil`, `Nombre_Usuario`, `Contraseña`, `Id_Usuario`, `Id_Rol`) VALUES ('1','Luiso','CRmiPais','1','1');
+INSERT INTO `perfil`(`Id_Perfil`, `Nombre_Usuario`, `Contraseña`, `Id_Usuario`, `Id_Rol`) VALUES ('2','Pedrix','Perrito10','2','1');
+INSERT INTO `perfil`(`Id_Perfil`, `Nombre_Usuario`, `Contraseña`, `Id_Usuario`, `Id_Rol`) VALUES ('3','Bryce20','Fortnite','3','2');
+INSERT INTO `empresa`(`Id_Empresa`, `Nombre_Empresa`, `Descripcion_Empresa`) VALUES ('1','DosPinos','Nos encargamos de la venta de comestibles.');
+INSERT INTO `ubicacion`(`Id_Ubicacion`, `Ubicacion`, `Id_Empresa`) VALUES ('1','Alajuela al frente del estadio Morera Soto','1');
+
+
+
 

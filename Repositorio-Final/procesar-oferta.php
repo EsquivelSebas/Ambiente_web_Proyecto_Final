@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['nombre_usuario'])) {
+    header('Location: iniciar_sesion.php');
+    exit();
+}
+
 include("bd-conexion.php");
 
 // se verifican que todas las variables del post sean vacias y si no estan vacias, se vles asigna un null

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['nombre_usuario'])) {
     header('Location: iniciar_sesion.php');
     exit();
@@ -60,7 +61,10 @@ if (!isset($_SESSION['nombre_usuario'])) {
                     <label for="idEmpresa" class="form-label">Id empresa:</label>
                     <input type="number" class="form-control" id="idEmpresa" name="idEmpresa" required>
                 </div>
+<<<<<<< HEAD
                 
+=======
+>>>>>>> b38ab921304f18cd98f0832d7f2e1bc67894d418
                 <button type="submit" class="btn btn-primary" id="botonCrearOferta" name="botonCrearOferta">Crear
                     oferta</button>
             </form>

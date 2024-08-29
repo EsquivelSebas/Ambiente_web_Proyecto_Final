@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['nombre_usuario'])) {
+    header('Location: iniciar_sesion.php');
+    exit();
+}
+
 include 'bd-conexion.php';
 ?>
 
@@ -22,32 +28,38 @@ include 'bd-conexion.php';
                     <img src="img/LOGOAMBIENTEWEB.png" alt="Logo" id="logo" class="img-fluid">
                 </div>
                 <div class="col-md-8">
-                    <nav>
-                        <ul class="nav justify-content-end" id="navbar_main1">
-                            <?php
-                            if (isset($_SESSION["nombre_usuario"]) && $_SESSION["nombre_usuario"] != "") {
-                                if ($_SESSION["nombre_rol"] == "Cliente") {
-                                    echo '<li class="nav-item"><a class="nav-link" href="crear_solicitud.php">Crear solicitud</a></li>';
-                                    echo '<li class="nav-item"><a class="nav-link" href="select-mensaje.php">Buzón</a></li>';
-                                    echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-cliente.php">Solicitudes</a></li>';
-                                } else if ($_SESSION["nombre_rol"] == "Contratador") {
-                                    echo '<li class="nav-item"><a class="nav-link" href="crear_oferta.php">Crear oferta</a></li>';
-                                    echo '<li class="nav-item"><a class="nav-link" href="eliminar_oferta.php">Eliminar oferta</a></li>';
-                                    echo '<li class="nav-item"><a class="nav-link" href="crear_mensaje.php">Crear mensaje</a></li>';
-                                    echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-contratador.php">Buzón</a></li>';
-                                }
-                                ?>
-                                <li class="nav-item"><a class="nav-link" href="select-oferta.php">Ofertas</a></li>
-                                <li class="nav-item"><a class="nav-link" href="ofertas2.php">Ofertas 2</a></li>
-                                <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar sesión</a></li>
-                                <?php
-                            } else { ?>
-                                <li class="nav-item"><a class="nav-link btn-login" href="iniciar_sesion.php">Iniciar sesión</a></li>
-                                <li class="nav-item"><a class="nav-link btn-login" href="crear_usuario.php">Crear Usuario Nuevo</a></li>
-                                <?php
-                            }
-                            ?>
-                        </ul>
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container">
+                            <a class="navbar-brand" href="#"></a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_main1" aria-controls="navbar_main1" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbar_main1">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                    <?php
+                                    if (isset($_SESSION["nombre_usuario"]) && $_SESSION["nombre_usuario"] != "") {
+                                        if ($_SESSION["nombre_rol"] == "Cliente") {
+                                            echo '<li class="nav-item"><a class="nav-link" href="crear_solicitud.php">Crear solicitud</a></li>';
+                                            echo '<li class="nav-item"><a class="nav-link" href="select-mensaje.php">Buzón</a></li>';
+                                            echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-cliente.php">Solicitudes</a></li>';
+                                        } else if ($_SESSION["nombre_rol"] == "Contratador") {
+                                            echo '<li class="nav-item"><a class="nav-link" href="crear_oferta.php">Crear oferta</a></li>';
+                                            echo '<li class="nav-item"><a class="nav-link" href="eliminar_oferta.php">Eliminar oferta</a></li>';
+                                            echo '<li class="nav-item"><a class="nav-link" href="crear_mensaje.php">Crear mensaje</a></li>';
+                                            echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-contratador.php">Buzón</a></li>';
+                                        }
+                                    ?>
+                                        <li class="nav-item"><a class="nav-link" href="select-oferta.php">Ofertas</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar sesión</a></li>
+                                        <?php
+                                    } else { ?>
+                                        <li class="nav-item"><a class="nav-link btn-login" href="iniciar_sesion.php">Iniciar sesión</a></li>
+                                    <?php
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -89,7 +101,9 @@ include 'bd-conexion.php';
                         <h5 id="">Nuevo modelo GPT 4.0</h5>
                         <p>An updated version of GPT-4 Turbo – the Large Language Model (LLM) that powers the paid version of ChatGPT – has been released</p>
                     </div>
+
                     <img src="img/chatgpt.jpg" id="carrouselimg" class="d-block w-100" alt="Slide 3">
+
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
@@ -105,10 +119,10 @@ include 'bd-conexion.php';
         </div>
 
         <section id="services" class="mb-4">
-            <h2>Más sobre nosotros</h2>
-            <p>Nos encargamos de ofrecer un sin fín de puestos de trabajo para los usuarios que no cuentan con experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
-            <a href="contacto.php" class="btn btn-primary bg-light" >Sobre nosotros</a>
-
+        <h2>Más sobre nosotros</h2>
+            <p>Nos encargamos de ofrecer un sin fín de puestos de trabajo para los usuarios que no cuentan con
+                experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
+            <a href="#" class="btn btn-primary">Sobre nosotros</a>
         </section>
     </main>
 
@@ -119,6 +133,7 @@ include 'bd-conexion.php';
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </body>
 
 </html>

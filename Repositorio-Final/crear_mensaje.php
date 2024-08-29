@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['nombre_usuario'])) {
     header('Location: iniciar_sesion.php');
     exit();
@@ -49,7 +50,7 @@ if (!isset($_SESSION['nombre_usuario'])) {
                     <label for="idPerfil" class="form-label">Id perfil:</label>
                     <input type="number" class="form-control" id="idPerfil" name="idPerfil" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonCrearMensaje">Enviar mensaje</button>
+                <button type="submit" class="btn btn-primary" id="botonCrearMensaje" name="botonCrearMensaje">Enviar mensaje</button>
             </form>
         </section>
     </main>

@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (!isset($_SESSION['nombre_usuario'])) {
+    header('Location: iniciar_sesion.php');
+    exit();
+}
+
 include("bd-conexion.php");
 header("Location: buzon_cliente_mensaje.php");
 
