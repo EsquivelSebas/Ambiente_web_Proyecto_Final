@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -7,10 +6,11 @@ if (!isset($_SESSION['nombre_usuario'])) {
     exit();
 }
 
-$ofertas = $_SESSION["ofertas"] ?? array();
+$solicitudes = $_SESSION["solicitudes"] ?? array();
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,8 @@ $ofertas = $_SESSION["ofertas"] ?? array();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="d-flex flex-column min-vh-100"  style=" background-image: url('img/fondo2.jpg'); background-size: cover;">
+
+<body class="d-flex flex-column min-vh-100" style=" background-image: url('img/fondo2.jpg'); background-size: cover;">
     <header class="bg-light py-3">
         <div class="container">
             <div class="row align-items-center">
@@ -42,20 +43,34 @@ $ofertas = $_SESSION["ofertas"] ?? array();
                     <h2 class="mb-3" id="">Solicitudes</h2>
                     <div class="mb-3">
                         <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 Ofertas
                             </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="?filtro=">Todas</a></li>
-                                <?php foreach ($ofertas as $oferta): ?>
-                                    <li><a class="dropdown-item" href="?filtro=<?php echo $oferta; ?>"><?php echo $oferta; ?></a></li>
-                                <?php endforeach; ?>
-                            </ul>
+                            <h2 class="mb-3" id="ofertas">Ofertas disponibles</h2>
+            <div class="row">
+                <?php foreach ($solicitudes as $solicitud): ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-lg bg-gradient-primary" id="crdbcg">
+                            <div class="card-body rounded" id="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="img/LOGOAMBIENTEWEB.png" alt="Icono" class="me-2" style="width: 30px; height: 30px;">
+                                </div id="bodyText">
+                                <p class="card-text"><strong>ID Solicitud:</strong> <?php echo $solicitud['Id_Solicitud']; ?></p>
+                                <p class="card-text"><strong>CV Aplicante:</strong> <?php echo $solicitud['CV_Aplicante']; ?></p>
+                                <p class="card-text text-muted"><strong>Enviado por ID:</strong> <?php echo $solicitud['Id_Perfil']; ?></p>
+                                <a href="crear_mensaje.php" class="btn btn-success w-100 mt-3" >Contactar Creador de Solicitud</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            </div>
                         </div>
                     </div>
                 </section>
             </div>
-            
+
     </main>
     <footer class="bg-light py-3 mt-4 border border-dark">
         <div class="container">
@@ -64,5 +79,5 @@ $ofertas = $_SESSION["ofertas"] ?? array();
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
 
+</html>

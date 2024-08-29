@@ -49,7 +49,7 @@ $ofertas = $_SESSION["ofertas"] ?? array();
                                 <p class="card-text"><strong>Nombre Oferta:</strong> <?php echo $oferta['Nombre_Oferta']; ?></p>
                                 <p class="card-text text-muted"><strong>Descripción:</strong> <?php echo $oferta['Descripcion_Oferta']; ?></p>
                                 <p class="card-text"><strong>Fecha Publicación:</strong> <?php echo $oferta['Fecha_Oferta']; ?></p>
-                                <a href="crear_solicitud.php" class="btn btn-primary w-100 mt-3">Aplica ya!</a>
+                                <a href="crear_solicitud.php" class="btn btn-success w-100 mt-3">Aplica ya!</a>
                             </div>
                         </div>
                     </div>

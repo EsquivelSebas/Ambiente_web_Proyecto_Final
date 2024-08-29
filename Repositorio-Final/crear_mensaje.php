@@ -50,7 +50,7 @@ if (!isset($_SESSION['nombre_usuario'])) {
                     <label for="idPerfil" class="form-label">Id perfil:</label>
                     <input type="number" class="form-control" id="idPerfil" name="idPerfil" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonCrearMensaje" name="botonCrearMensaje">Enviar mensaje</button>
+                <button type="submit" class="btn btn-success" id="botonCrearMensaje" name="botonCrearMensaje">Enviar mensaje</button>
             </form>
         </section>
     </main>

@@ -62,7 +62,7 @@ if (!isset($_SESSION['nombre_usuario'])) {
                     <input type="number" class="form-control" id="idEmpresa" name="idEmpresa" required>
                 </div>
                 
-                <button type="submit" class="btn btn-primary" id="botonCrearOferta" name="botonCrearOferta">Crear
+                <button type="submit" class="btn btn-success" id="botonCrearOferta" name="botonCrearOferta">Crear
                     oferta</button>
             </form>
         </section>

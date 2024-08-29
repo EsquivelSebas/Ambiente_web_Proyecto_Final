@@ -37,7 +37,7 @@ $mensajes = $_SESSION["mensajes"] ?? array();
     </header>
     <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
-            <h2 class="mb-3" id="ofertas">Ofertas disponibles</h2>
+            <h2 class="mb-3" id="ofertas">Inbox</h2>
             <div class="row">
                 <?php foreach ($mensajes as $mensaje): ?>
                     <div class="col-md-4 mb-4">
