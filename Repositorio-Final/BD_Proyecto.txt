@@ -42,7 +42,6 @@ Id_Oferta INT NOT NULL AUTO_INCREMENT PRIMARY KEY, /*PK*/
 Nombre_Oferta VARCHAR(50) NOT NULL,
 Descripcion_Oferta VARCHAR(150) NOT NULL,
 Fecha_Oferta DATE NOT NULL,
-
 Id_Perfil INT NOT NULL, /*FK*/
 Id_Empresa INT NOT NULL, /*FK*/
 FOREIGN KEY(Id_Perfil) REFERENCES Perfil(Id_Perfil),
@@ -77,8 +76,10 @@ INSERT INTO `perfil`(`Id_Perfil`, `Nombre_Usuario`, `Contraseña`, `Id_Usuario`,
 INSERT INTO `perfil`(`Id_Perfil`, `Nombre_Usuario`, `Contraseña`, `Id_Usuario`, `Id_Rol`) VALUES ('3','Bryce20','Fortnite','3','2');
 INSERT INTO `empresa`(`Id_Empresa`, `Nombre_Empresa`, `Descripcion_Empresa`) VALUES ('1','DosPinos','Nos encargamos de la venta de comestibles.');
 INSERT INTO `empresa`(`Id_Empresa`, `Nombre_Empresa`, `Descripcion_Empresa`) VALUES ('2','Pymes IT','Nos encargamos de la venta de componentes de computadores.');
-INSERT INTO `empresa`(`Id_Empresa`, `Nombre_Empresa`, `Descripcion_Empresa`) VALUES ('3','La gallito','Nos encargamos de la venta de golosinas.');
-INSERT INTO `ubicacion`(`Id_Ubicacion`, `Ubicacion`, `Id_Empresa`) VALUES ('1','Alajuela al frente del estadio Morera Soto','1');
+INSERT INTO `ubicacion`(`Id_Ubicacion`, `Ubicacion`, `Id_Empresa`) VALUES ('1','Alajuela al frente del estadio Morera Soto.','1');
+INSERT INTO `ubicacion`(`Id_Ubicacion`, `Ubicacion`, `Id_Empresa`) VALUES ('2','Heredia al frente del Palacio de los Deportes.','2');
+
+ES IMPORTANTE ACLARAR QUE EN LA TABLA MENSAJES, EL ID QUE PIDE EL FORMULARIO CORRESPONDE AL ID DEL USUARIO AL CUAL NOSOTROS DESEAMOS ENVIARLE EL MENSAJE COMO CONTRATADOR.
 
 
 

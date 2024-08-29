@@ -48,7 +48,7 @@ $mensajes = $_SESSION["mensajes"] ?? array();
                                 </div id="bodyText">
                                 <p class="card-text"><strong>ID Oferta:</strong> <?php echo $mensaje['Id_Mensaje']; ?></p>
                                 <p class="card-text"><strong>Asunto:</strong> <?php echo $mensaje['Asunto']; ?></p>
-                                <p class="card-text text-muted"><strong>Fecha recibida:</strong> <?php echo $mensaje['Fecha_Envio']; ?></p>
+                                <p class="card-text"><strong>Fecha recibida:</strong> <?php echo $mensaje['Fecha_Envio']; ?></p>
                                 
                                
                             </div>

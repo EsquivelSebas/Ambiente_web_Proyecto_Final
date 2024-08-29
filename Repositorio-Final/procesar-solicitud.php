@@ -1,6 +1,13 @@
 <?php
-include("bd-conexion.php");
+
 session_start();
+
+if (!isset($_SESSION['nombre_usuario'])) {
+    header('Location: iniciar_sesion.php');
+    exit();
+}
+
+include("bd-conexion.php");
 header('Location: crear_solicitud.php');
 
 $cv = isset($_POST["cv"]) ? $_POST["cv"] : null;

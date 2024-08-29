@@ -2,11 +2,21 @@
 session_start();
 
 if (!isset($_SESSION['nombre_usuario'])) {
-    header('Location: buzon_cliente_solicitud.php');
+    header('Location: iniciar_sesion.php');
     exit();
 }
 
+//Verifico si la variable solicitudes existe si no existe se inicia como un array vacío
 $solicitudes = $_SESSION["solicitudes"] ?? array();
+//Se extrae el valor de la columna 'Nombre_Oferta' y se eliminan los duplicados con array_unique.
+$ofertas = array_unique(array_column($solicitudes, 'Nombre_Oferta'));
+
+
+$filtro = $_GET['filtro'] ?? '';
+$solicitudes_filtradas = array_filter($solicitudes, function($solicitud) use ($filtro) {
+    return $filtro === '' || $solicitud['Nombre_Oferta'] === $filtro;
+});
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -47,9 +57,15 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Ofertas
                             </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="?filtro=">Todas</a></li>
+                                <?php foreach ($ofertas as $oferta): ?>
+                                    <li><a class="dropdown-item" href="?filtro=<?php echo $oferta; ?>"><?php echo $oferta; ?></a></li>
+                                <?php endforeach; ?>
+                            </ul>
                             <h2 class="mb-3" id="ofertas">Ofertas disponibles</h2>
             <div class="row">
-                <?php foreach ($solicitudes as $solicitud): ?>
+                <?php foreach ($solicitudes_filtradas as $solicitud): ?>
                     <div class="col-md-4 mb-4">
                         <div class="card h-100 shadow-lg bg-gradient-primary" id="crdbcg">
                             <div class="card-body rounded" id="card-body">
@@ -58,8 +74,8 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
                                 </div id="bodyText">
                                 <p class="card-text"><strong>ID Solicitud:</strong> <?php echo $solicitud['Id_Solicitud']; ?></p>
                                 <p class="card-text"><strong>CV Aplicante:</strong> <?php echo $solicitud['CV_Aplicante']; ?></p>
-                                <p class="card-text text-muted"><strong>Enviado por ID:</strong> <?php echo $solicitud['Id_Perfil']; ?></p>
-                                <a href="crear_mensaje.php" class="btn btn-success w-100 mt-3" >Contactar Creador de Solicitud</a>
+                                <p class="card-text"><strong>Enviado por ID:</strong> <?php echo $solicitud['Id_Perfil']; ?></p>
+                                <a href="crear_mensaje.php" class="btn btn-success w-100 mt-3" >Contactar aplicante</a>
                             </div>
                         </div>
                     </div>

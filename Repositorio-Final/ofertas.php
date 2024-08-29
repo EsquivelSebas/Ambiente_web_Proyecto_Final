@@ -47,9 +47,8 @@ $ofertas = $_SESSION["ofertas"] ?? array();
                                 </div id="bodyText">
                                 <p class="card-text"><strong>ID Oferta:</strong> <?php echo $oferta['Id_Oferta']; ?></p>
                                 <p class="card-text"><strong>Nombre Oferta:</strong> <?php echo $oferta['Nombre_Oferta']; ?></p>
-                                <p class="card-text text-muted"><strong>Descripción:</strong> <?php echo $oferta['Descripcion_Oferta']; ?></p>
+                                <p class="card-text"><strong>Descripción:</strong> <?php echo $oferta['Descripcion_Oferta']; ?></p>
                                 <p class="card-text"><strong>Fecha Publicación:</strong> <?php echo $oferta['Fecha_Oferta']; ?></p>
-                                <a href="crear_solicitud.php" class="btn btn-success w-100 mt-3">Aplica ya!</a>
                             </div>
                         </div>
                     </div>
