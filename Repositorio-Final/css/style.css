@@ -4,6 +4,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+   
 }
 
 /* Logo */
@@ -38,11 +39,22 @@ img #carrouselimg {
 
 .card-body {
     flex: 1; 
+    color: black;
+
 }
 
 #siguienteBtn, #aplicarBoton {
     
 }
+
+
+
+#bodyText{
+color: #000;
+
+}
+
+
 
 #carouseltexto {
     position: absolute;
@@ -51,19 +63,22 @@ img #carrouselimg {
     right: 0;
     color: #000;
 }
+#botonmassobre{
+    color: #4caf50;
+    background-color: #0056b3;
+}
 
 /* Barra de navegación principal */
 #navbar_main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(13deg, #4caf50, #96d499) !important;
-    padding: 15px 30px;
+    background: linear-gradient(13deg, #4caf50, #0056b3) !important; 
     box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
     transition: all 0.3s ease;
 }
 .navbar-light {
@@ -121,9 +136,7 @@ img #carrouselimg {
     display: none; 
 }
 
-.navbar-toggler-icon {
-    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"%3E%3Cpath stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /%3E%3C/svg%3E');
-}
+
 /* Efectos adicionales para el menú */
 #navbar_main:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10); 
@@ -132,7 +145,7 @@ img #carrouselimg {
 
 /* Estilo del menú desplegable */
 .navbar-collapse {
-    flex-grow: 0;
+    flex-grow: 15;
 }
 
 .navbar-nav {
@@ -147,7 +160,7 @@ img #carrouselimg {
 }
 
 .navbar-nav a:hover {
-    background-color: darkkhaki;
+    background-color: #4caf50;
     color: #fff;
 }
 

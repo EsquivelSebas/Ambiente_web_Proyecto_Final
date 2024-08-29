@@ -18,7 +18,7 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100"  style=" background-image: url('img/fondo2.jpg'); background-size: contain;">
     <header class="bg-light py-3">
         <div class="container">
             <div class="row align-items-center">
@@ -37,20 +37,27 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
     </header>
     <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
-            <h2 class="mb-3" id="solicitudes">Solicitudes creadas</h2>
+            <h2 class="mb-3" id="ofertas">Ofertas disponibles</h2>
             <div class="row">
                 <?php foreach ($solicitudes as $solicitud): ?>
                     <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-lg">
-                            <div class="card-body bg-light border border-primary rounded">
-                                <p class="card-text"><strong>Nombre oferta:</strong><?php echo $solicitud['Id_Oferta']; ?></h5>
-                                <p class="card-text"><strong>CV aplicante:</strong> <?php echo $solicitud['CV_Aplicante']; ?></p>
+                        <div class="card h-100 shadow-lg bg-gradient-primary" id="crdbcg">
+                            <div class="card-body rounded" id="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="img/LOGOAMBIENTEWEB.png" alt="Icono" class="me-2" style="width: 30px; height: 30px;">
+                                </div id="bodyText">
+                                <p class="card-text"><strong>ID Solicitud:</strong> <?php echo $solicitud['Id_Solicitud']; ?></p>
+                                <p class="card-text"><strong>CV Aplicante:</strong> <?php echo $solicitud['CV_Aplicante']; ?></p>
+                                <p class="card-text text-muted"><strong>Enviado por ID:</strong> <?php echo $solicitud['Id_Perfil']; ?></p>
+                                <a href="ofertas.php" class="btn btn-login w-100 mt-3" >Ver mas ofertas</a>
                             </div>
                         </div>
                     </div>
-                    <?php endforeach; ?>
+                <?php endforeach; ?>
+            </div>
             </div>
         </section>
+        
     </main>
     <footer class="bg-light py-3 mt-4 border border-dark">
         <div class="container">

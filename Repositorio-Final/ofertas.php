@@ -1,11 +1,9 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['nombre_usuario'])) {
-    header('Location: iniciar_sesion.php');
+    header('Location: ofertas.php');
     exit();
 }
-
 $ofertas = $_SESSION["ofertas"] ?? array();
 ?>
 
@@ -16,10 +14,9 @@ $ofertas = $_SESSION["ofertas"] ?? array();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aplicación</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100" style=" background-image: url('img/fondo2.jpg'); background-size: cover;">
     <header class="bg-light py-3">
         <div class="container">
             <div class="row align-items-center">
@@ -39,27 +36,26 @@ $ofertas = $_SESSION["ofertas"] ?? array();
     <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
             <h2 class="mb-3" id="ofertas">Ofertas disponibles</h2>
-            <div class="card shadow-lg p-4 mb-5 bg-white rounded" id="cardContainer">
-    <?php
-    $index = $_SESSION['index'] ?? 0;
-    if (isset($ofertas[$index])) {
-        $oferta = $ofertas[$index];
-    ?>
-        <div id="cardtinder" class="card-body text-center">
-            <h4 class="card-title"><?php echo $oferta['Nombre_Empresa']; ?></h4>
-            <h5 class="card-subtitle mb-2 text-muted"><?php echo $oferta['Nombre_Oferta']; ?></h5>
-            <p class="card-text"><?php echo $oferta['Descripcion_Oferta']; ?></p>
-            <p class="card-text"><small class="text-muted">Publicado: <?php echo $oferta['Fecha_Oferta']; ?></small></p>
-            <div class="d-flex justify-content-around mt-4">
-                <a href="#" class="btn btn-success" id="aplicarBoton">Aplicar</a>
-                <a href="siguiente_oferta.php" class="btn btn-danger" id="siguienteBtn">Siguiente</a>
+            <div class="row">
+                    <?php foreach ($ofertas as $oferta): ?>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-lg bg-gradient-primary" id="crdbcg">
+                            <div class="card-body rounded" id="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="img/LOGOAMBIENTEWEB.png" alt="Icono" class="me-2" style="width: 30px; height: 30px;">
+                                    <h5 class="card-title mb-0"><?php echo $oferta['Nombre_Empresa']; ?></h5>
+                                </div id="bodyText">
+                                <p class="card-text"><strong>ID Oferta:</strong> <?php echo $oferta['Id_Oferta']; ?></p>
+                                <p class="card-text"><strong>Nombre Oferta:</strong> <?php echo $oferta['Nombre_Oferta']; ?></p>
+                                <p class="card-text text-muted"><strong>Descripción:</strong> <?php echo $oferta['Descripcion_Oferta']; ?></p>
+                                <p class="card-text"><strong>Fecha Publicación:</strong> <?php echo $oferta['Fecha_Oferta']; ?></p>
+                                <a href="crear_solicitud.php" class="btn btn-primary w-100 mt-3">Aplica ya!</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
             </div>
-        </div>
-    <?php } else { ?>
-        <p class="text-center">no hay ofertas disponibles.</p>
-    <?php } ?>
-</div>
-
+            </div>
         </section>
     </main>
     <footer class="bg-light py-3 mt-4 border border-dark">
@@ -67,7 +63,5 @@ $ofertas = $_SESSION["ofertas"] ?? array();
             <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/animacion-fade.js"></script>
 </body>
 </html>

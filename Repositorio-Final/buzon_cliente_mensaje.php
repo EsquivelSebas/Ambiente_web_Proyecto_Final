@@ -18,7 +18,7 @@ $mensajes = $_SESSION["mensajes"] ?? array();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100"  style=" background-image: url('img/fondo2.jpg'); background-size: cover;">
     <header class="bg-light py-3">
         <div class="container">
             <div class="row align-items-center">
@@ -37,19 +37,24 @@ $mensajes = $_SESSION["mensajes"] ?? array();
     </header>
     <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
-            <h2 class="mb-3" id="mensajes">Buzon</h2>
+            <h2 class="mb-3" id="ofertas">Ofertas disponibles</h2>
             <div class="row">
                 <?php foreach ($mensajes as $mensaje): ?>
                     <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-lg">
-                            <div class="card-body bg-light border border-primary rounded">
-                                <p class="card-text"><strong>Id mensaje:</strong> <?php echo $mensaje['Id_Mensaje']; ?></p>
+                        <div class="card h-100 shadow-lg bg-gradient-primary" id="crdbcg">
+                            <div class="card-body rounded" id="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <img src="img/LOGOAMBIENTEWEB.png" alt="Icono" class="me-2" style="width: 30px; height: 30px;">
+                                </div id="bodyText">
+                                <p class="card-text"><strong>ID Oferta:</strong> <?php echo $mensaje['Id_Mensaje']; ?></p>
                                 <p class="card-text"><strong>Asunto:</strong> <?php echo $mensaje['Asunto']; ?></p>
-                                <p class="card-text"><strong>Fecha envío:</strong> <?php echo $mensaje['Fecha_Envio']; ?></p>
+                                <p class="card-text text-muted"><strong>Fecha recibida:</strong> <?php echo $mensaje['Fecha_Envio']; ?></p>
+                                
+                               
                             </div>
                         </div>
                     </div>
-                    <?php endforeach; ?>
+                <?php endforeach; ?>
             </div>
         </section>
     </main>

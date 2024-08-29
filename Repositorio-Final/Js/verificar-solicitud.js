@@ -31,7 +31,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if(!validarTexto(cv) || !validarNumero(idOferta) || !validarNumero(idPerfil)){
                 event.preventDefault();
                 alert('Los campos no cumplen con el formato válido o se encuentrán vacíos para crear una solicitud de empleo.');
-            }      
+            }  else{
+                alert('Oferta creada exitosamente.');
+            }
+            
         });
     }else{
         alert('El elemento no se encontró en el DOM');

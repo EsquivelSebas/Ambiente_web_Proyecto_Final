@@ -19,7 +19,7 @@ if (!isset($_SESSION['nombre_usuario'])) {
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100"  style=" background-image: url('img/fondo2.jpg'); background-size: cover;">
     <header class="bg-light py-3">
         <div class="container">
             <div class="row align-items-center">
@@ -61,10 +61,7 @@ if (!isset($_SESSION['nombre_usuario'])) {
                     <label for="idEmpresa" class="form-label">Id empresa:</label>
                     <input type="number" class="form-control" id="idEmpresa" name="idEmpresa" required>
                 </div>
-<<<<<<< HEAD
                 
-=======
->>>>>>> b38ab921304f18cd98f0832d7f2e1bc67894d418
                 <button type="submit" class="btn btn-primary" id="botonCrearOferta" name="botonCrearOferta">Crear
                     oferta</button>
             </form>

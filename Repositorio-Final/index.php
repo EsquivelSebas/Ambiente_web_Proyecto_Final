@@ -17,10 +17,12 @@ include 'bd-conexion.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="Js/toglemap.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100"
+    style=" background-image: url('img/fondobrbr.jpg'); background-size: cover;">
     <header id="navbar_main">
         <div class="container">
             <div class="row align-items-center">
@@ -31,7 +33,9 @@ include 'bd-conexion.php';
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <div class="container">
                             <a class="navbar-brand" href="#"></a>
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_main1" aria-controls="navbar_main1" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbar_main1" aria-controls="navbar_main1" aria-expanded="false"
+                                aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="navbar_main1">
@@ -48,13 +52,15 @@ include 'bd-conexion.php';
                                             echo '<li class="nav-item"><a class="nav-link" href="crear_mensaje.php">Crear mensaje</a></li>';
                                             echo '<li class="nav-item"><a class="nav-link" href="select-solicitud-contratador.php">Buzón</a></li>';
                                         }
-                                    ?>
+                                        ?>
                                         <li class="nav-item"><a class="nav-link" href="select-oferta.php">Ofertas</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar sesión</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="cerrar_sesion.php">Cerrar sesión</a>
+                                        </li>
                                         <?php
                                     } else { ?>
-                                        <li class="nav-item"><a class="nav-link btn-login" href="iniciar_sesion.php">Iniciar sesión</a></li>
-                                    <?php
+                                        <li class="nav-item"><a class="nav-link btn-login" href="iniciar_sesion.php">Iniciar
+                                                sesión</a></li>
+                                        <?php
                                     }
                                     ?>
                                 </ul>
@@ -86,20 +92,23 @@ include 'bd-conexion.php';
                     <img src="img/intellogo.jpg" id="carrouselimg" class="d-block w-100" alt="Slide 1">
                     <div class="carousel-caption d-none d-md-block" id="carouseltexto">
                         <h5>Intel New CPU</h5>
-                        <p>Intel has officially confirmed that its 15th generation processors, known as “Arrow Lake,” are set to launch in the fourth quarter of 2024.</p>
+                        <p>Intel has officially confirmed that its 15th generation processors, known as “Arrow Lake,”
+                            are set to launch in the fourth quarter of 2024.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="img/mc3.jpg" id="carrouselimg" class="d-block w-100" alt="Slide 2">
                     <div class="carousel-caption d-none d-md-block" id="carouseltexto">
                         <h5 style="color: aliceblue;">New Intership opportunities</h5>
-                        <p style="color: aliceblue;">Microsoft just launched diverse internship programs for students eager to learn about AI models and machine learning.</p>
+                        <p style="color: aliceblue;">Microsoft just launched diverse internship programs for students
+                            eager to learn about AI models and machine learning.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="carousel-caption d-none d-md-block" id="carouseltexto">
                         <h5 id="">Nuevo modelo GPT 4.0</h5>
-                        <p>An updated version of GPT-4 Turbo – the Large Language Model (LLM) that powers the paid version of ChatGPT – has been released</p>
+                        <p>An updated version of GPT-4 Turbo – the Large Language Model (LLM) that powers the paid
+                            version of ChatGPT – has been released</p>
                     </div>
 
                     <img src="img/chatgpt.jpg" id="carrouselimg" class="d-block w-100" alt="Slide 3">
@@ -119,10 +128,19 @@ include 'bd-conexion.php';
         </div>
 
         <section id="services" class="mb-4">
-        <h2>Más sobre nosotros</h2>
+            <h2>Más sobre nosotros</h2>
             <p>Nos encargamos de ofrecer un sin fín de puestos de trabajo para los usuarios que no cuentan con
                 experiencia laboral, revisa nuestras ofertas para encontrar la ideal para ti.</p>
-            <a href="#" class="btn btn-primary">Sobre nosotros</a>
+            <div class="container mt-4">
+                <button class="btn " id="botonmassobre" onclick="toggleMap()">Mostrar/Ocultar Mapa</button>
+
+                <div id="map-container" class="mt-4">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d10369.59700524445!2d-84.11117974392504!3d9.988536222424067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2scr!4v1724909728606!5m2!1ses-419!2scr"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </section>
     </main>
 
