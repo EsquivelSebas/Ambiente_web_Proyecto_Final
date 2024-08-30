@@ -46,7 +46,7 @@ $mensajes = $_SESSION["mensajes"] ?? array();
                                 <div class="d-flex align-items-center mb-3">
                                     <img src="img/LOGOAMBIENTEWEB.png" alt="Icono" class="me-2" style="width: 30px; height: 30px;">
                                 </div id="bodyText">
-                                <p class="card-text"><strong>ID Oferta:</strong> <?php echo $mensaje['Id_Mensaje']; ?></p>
+                                <p class="card-text"><strong>ID Mensaje:</strong> <?php echo $mensaje['Id_Mensaje']; ?></p>
                                 <p class="card-text"><strong>Asunto:</strong> <?php echo $mensaje['Asunto']; ?></p>
                                 <p class="card-text"><strong>Fecha recibida:</strong> <?php echo $mensaje['Fecha_Envio']; ?></p>
                                 
