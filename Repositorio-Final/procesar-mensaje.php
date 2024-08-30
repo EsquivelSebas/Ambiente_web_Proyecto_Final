@@ -33,7 +33,7 @@ $_POST = array();
 function existenciaUsuario($idPerfilPost) {
     global $conexion;
     // Creamos la declaración preparada.
-    $declaracion = $conexion->prepare("SELECT COUNT(*) FROM `mensajes` WHERE Id_Perfil = ?");
+    $declaracion = $conexion->prepare("SELECT COUNT(*) FROM `perfil` WHERE Id_Perfil = ?");
     // Vinculamos los parámetros a la declaración.
     $declaracion->bind_param("i", $idPerfilPost);
     // Si al ejecutar la declaración nos da error lanzamos una excepción.
