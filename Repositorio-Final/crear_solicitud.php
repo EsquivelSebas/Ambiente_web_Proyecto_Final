@@ -21,8 +21,8 @@ if (!isset($_SESSION['nombre_usuario'])) {
     <link rel="stylesheet" href="css/modal.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100"  style=" background-image: url('img/fondo2.jpg'); background-size: cover;">
-    <header class="bg-light py-3">
+<body class="d-flex flex-column min-vh-100"  style=" background-image: url('img/fondo2.jpg'); background-size: cover;" >
+    <header class="bg-light py-3" >
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4">
@@ -55,7 +55,7 @@ if (!isset($_SESSION['nombre_usuario'])) {
                     <input type="number" class="form-control" id="idPerfil" name="idPerfil"
                         value="<?php echo $_SESSION['id_perfil']; ?>" required readonly>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonCrearSolicitud" name="botonCrearSolicitud">Crear
+                <button type="submit" class="btn btn-success" id="botonCrearSolicitud" name="botonCrearSolicitud">Crear
                     solicitud</button>
                     
             </form>

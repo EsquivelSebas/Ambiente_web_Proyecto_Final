@@ -144,7 +144,7 @@ include 'bd-conexion.php';
         </section>
     </main>
 
-    <footer class="bg-light py-3 mt-4 border border-dark">
+    <footer class="bg-light py-3 mt-4 border border-success">
         <div class="container">
             <p class="text-center">&copy; <?php echo date("d/m/Y"); ?> SE Works.</p>
         </div>
