@@ -37,7 +37,7 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
     </header>
     <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
-            <h2 class="mb-3" id="ofertas">Solicitudes creadas</h2>
+            <h2 class="mb-3" id="solicitudes">Solicitudes creadas</h2>
             <div class="row">
                 <?php foreach ($solicitudes as $solicitud): ?>
                     <div class="col-md-4 mb-4">
@@ -48,7 +48,7 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
                                 </div id="bodyText">
                                 <p class="card-text"><strong>ID Solicitud:</strong> <?php echo $solicitud['Id_Solicitud']; ?></p>
                                 <p class="card-text"><strong>CV Aplicante:</strong> <?php echo $solicitud['CV_Aplicante']; ?></p>
-                                <p class="card-text"><strong>ID Aplicante:</strong> <?php echo $solicitud['Id_Perfil']; ?></p>
+                                <p class="card-text"><strong>ID Oferta:</strong> <?php echo $solicitud['Id_Oferta']; ?></p>
                                 <a href="ofertas.php" class="btn btn-login w-100 mt-3" >Ver más ofertas</a>
                             </div>
                         </div>
@@ -57,7 +57,6 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
             </div>
             </div>
         </section>
-        
     </main>
     <footer class="bg-light py-3 mt-4 border border-dark">
         <div class="container">
