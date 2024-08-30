@@ -37,7 +37,7 @@
                     <label for="contraseña" class="form-label">Contraseña:</label>
                     <input type="password" class="form-control" id="contraseña" name="contraseña" required>
                 </div>
-                <button type="submit" class="btn btn-primary" id="botonEnviar" name="botonEnviar">Iniciar sesión</button>
+                <button type="submit" class="btn btn-success" id="botonEnviar" name="botonEnviar">Iniciar sesión</button>
                 <br>
             </form>
         </section>

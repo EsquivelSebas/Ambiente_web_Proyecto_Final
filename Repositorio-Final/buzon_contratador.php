@@ -53,7 +53,7 @@ $solicitudes_filtradas = array_filter($solicitudes, function($solicitud) use ($f
                     <h2 class="mb-3" style="padding-bottom:1px;padding-top:70px" id="">Solicitudes</h2>
                     <div class="mb-3">
                         <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Ofertas
                             </button>
