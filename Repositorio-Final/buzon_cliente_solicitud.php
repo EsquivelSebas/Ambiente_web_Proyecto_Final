@@ -48,7 +48,7 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
                                 </div id="bodyText">
                                 <p class="card-text"><strong>ID Solicitud:</strong> <?php echo $solicitud['Id_Solicitud']; ?></p>
                                 <p class="card-text"><strong>CV Aplicante:</strong> <?php echo $solicitud['CV_Aplicante']; ?></p>
-                                <p class="card-text"><strong>ID Aplicante:</strong> <?php echo $solicitud['Id_Perfil']; ?></p>
+                                <p class="card-text"><strong>ID Oferta:</strong> <?php echo $solicitud['Id_Oferta']; ?></p>
                                 <a href="ofertas.php" class="btn btn-login w-100 mt-3" >Ver más ofertas</a>
                             </div>
                         </div>
