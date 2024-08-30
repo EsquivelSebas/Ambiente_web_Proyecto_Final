@@ -15,6 +15,7 @@ $idPerfilPost = isset($_POST["idPerfil"]) ? $_POST["idPerfil"] : null;
 
 try{
     if(isset($_POST["botonCrearMensaje"])){
+        existenciaUsuario($idPerfilPost);
         enviarMensaje($asunto, $fechaMensaje, $idPerfilPost);
         header("Location: crear_mensaje.php");
     }else{
@@ -28,6 +29,28 @@ try{
 
 //Limpiamos las variables después de usarlas.
 $_POST = array();
+
+function existenciaUsuario($idPerfilPost) {
+    global $conexion;
+    // Creamos la declaración preparada.
+    $declaracion = $conexion->prepare("SELECT COUNT(*) FROM `mensajes` WHERE Id_Perfil = ?");
+    // Vinculamos los parámetros a la declaración.
+    $declaracion->bind_param("i", $idPerfilPost);
+    // Si al ejecutar la declaración nos da error lanzamos una excepción.
+    if (!$declaracion->execute()) {
+        throw new Exception("Error al verificar la existencia del usuario: " .$declaracion->error);
+    }
+    // Obtenemos el resultado.
+    $declaracion->bind_result($count);
+    $declaracion->fetch();
+    // Si el usuario no existe, mostramos un mensaje y detenemos la ejecución.
+    if ($count == 0) {
+        echo "El usuario con ID $idPerfilPost no existe.";
+        exit();
+    }
+    // Cerramos la declaración.
+    $declaracion->close();
+}
 
 function enviarMensaje($asunto, $fechaMensaje, $idPerfilPost) {
     global $conexion;

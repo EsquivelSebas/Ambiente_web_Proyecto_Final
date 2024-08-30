@@ -50,7 +50,7 @@ $solicitudes_filtradas = array_filter($solicitudes, function($solicitud) use ($f
         <div class="row">
             <div class="col-md-12">
                 <section id="contact" class="mb-4 mt-4">
-                    <h2 class="mb-3" style="padding-bottom:1px;padding-top:70px" id="">Solicitudes</h2>
+                    <h2 class="mb-3" style="padding-bottom:1px;padding-top:70px" id="">Ofertas</h2>
                     <div class="mb-3">
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
@@ -63,7 +63,7 @@ $solicitudes_filtradas = array_filter($solicitudes, function($solicitud) use ($f
                                     <li><a class="dropdown-item" href="?filtro=<?php echo $oferta; ?>"><?php echo $oferta; ?></a></li>
                                 <?php endforeach; ?>
                             </ul>
-                            <h2 class="mb-3" id="ofertas">Ofertas disponibles</h2>
+                            <h2 class="mb-3" id="ofertas">Solicitudes disponibles</h2>
             <div class="row">
                 <?php foreach ($solicitudes_filtradas as $solicitud): ?>
                     <div class="col-md-4 mb-4">
