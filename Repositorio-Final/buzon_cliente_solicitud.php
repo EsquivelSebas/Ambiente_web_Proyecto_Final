@@ -37,11 +37,7 @@ $solicitudes = $_SESSION["solicitudes"] ?? array();
     </header>
     <main class="container mt-4 flex-grow-1">
         <section id="contact" class="mb-4">
-<<<<<<< HEAD
             <h2 class="mb-3" id="ofertas">Solicitudes creadas</h2>
-=======
-            <h2 class="mb-3" style="padding-bottom:1px;padding-top:70px" id="ofertas">Ofertas disponibles</h2>
->>>>>>> 645f4d2c4227f788a3876aa2b614e50922186639
             <div class="row">
                 <?php foreach ($solicitudes as $solicitud): ?>
                     <div class="col-md-4 mb-4">
